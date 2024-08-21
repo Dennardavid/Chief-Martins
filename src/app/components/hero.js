@@ -23,7 +23,7 @@ export default function Hero() {
   });
 
   return (
-    <section className="relative px-10 top-[30%] xl:top-[50%] flex flex-col lg:flex-row  gap-2 justify-between text-white">
+    <section className="relative px-5 md:px-8 lg:px-10 top-[30%] xl:top-[50%] flex flex-col lg:flex-row  gap-2 justify-between text-white">
       <div>
         <h1 className="header font-extrabold text-2xl md:text-3xl xl:text-7xl xl:w-[850px]">
           Chief Martins Dafe Abu

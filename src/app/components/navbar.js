@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     <header className="text-white">
       <nav
-        className="flex justify-between items-center lg:hover:bg-slate-50 lg:hover:backdrop-filter lg:hover:bg-opacity-15 lg:hover:backdrop-blur-md px-10 ease-in-out duration-500"
+        className="flex justify-between items-center lg:hover:bg-slate-50 lg:hover:backdrop-filter lg:hover:bg-opacity-15 lg:hover:backdrop-blur-md px-5 md:px-8 lg:px-10 ease-in-out duration-500"
       >
         <div className="logo">
           <Image src="/logo.webp" alt="logo" width={80} height={80} />
