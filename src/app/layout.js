@@ -7,6 +7,9 @@ const inter = Geologica({ subsets: ["latin"], weight: ["400", "700"] });
 export const metadata = {
   title: "Chief Martins Abu",
   description: "Burial Preparation for Chief Martins Abu",
+  icons: {
+    icon: "/logo.webp",
+  },
 };
 
 export default function RootLayout({ children }) {

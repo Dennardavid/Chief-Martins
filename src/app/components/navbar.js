@@ -34,7 +34,7 @@ export default function Navbar() {
             <Link href="/donatihref">Donation</Link>
           </li>
         </ul>
-        <IoMenuSharp size={30} />
+        <IoMenuSharp size={35} />
       </nav>
     </header>
   );
