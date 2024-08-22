@@ -23,7 +23,7 @@ export default function Hero() {
   });
 
   return (
-    <section className="absolute px-4 md:px-8 lg:px-10 top-[30%] md:top-[35%] xl:top-[50%] flex flex-col lg:flex-row  gap-2 justify-between text-white">
+    <section className="absolute px-4 md:px-8 lg:px-10 top-[37%] md:top-[40%] xl:top-[50%] flex flex-col lg:flex-row  gap-2 justify-between text-white">
       <div>
         <h1 className="header font-extrabold text-2xl md:text-3xl xl:text-7xl xl:w-[850px]">
           Chief Martins Dafe Abu
@@ -36,7 +36,7 @@ export default function Hero() {
         </h2>
       </div>
       <div className="xl:w-[500px] flex flex-col gap-2 md:gap-4 p-4 md:p-5 bg-amber-950 backdrop-filter bg-opacity-30 backdrop-blur xl:absolute xl:right-10 xl:bottom-16 rounded-xl shadow-md shadow-white/30 text-justify">
-        <p className="Intro text-base md:text-xl font-bold self-center">
+        <p className="Intro text-base md:text-xl font-bold lg:self-center">
           Honoring a Life of Love and Fulfillment
         </p>
         <p className="Intro text-sm">
