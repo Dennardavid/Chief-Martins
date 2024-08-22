@@ -23,7 +23,7 @@ export default function Hero() {
   });
 
   return (
-    <section className="absolute px-4 md:px-8 lg:px-10 top-[37%] md:top-[40%] xl:top-[50%] flex flex-col lg:flex-row  gap-2 justify-between text-white">
+    <section className="absolute px-4 md:px-8 lg:px-10 top-[50%] md:top-[40%] xl:top-[50%] flex flex-col lg:flex-row  gap-2 justify-between text-white">
       <div>
         <h1 className="header font-extrabold text-2xl md:text-3xl xl:text-7xl xl:w-[850px]">
           Chief Martins Dafe Abu
@@ -40,20 +40,9 @@ export default function Hero() {
           Honoring a Life of Love and Fulfillment
         </p>
         <p className="Intro text-sm">
-          Welcome to the memorial site for Chief Martins Dafe Abu.. “The Akehro
-          of Olomu Kingdom, The ** of Olomoro Kingdom”
-        </p>
-        <p className="Intro text-sm">
-          A man who lived life to the fullest and whose love touched everyone
-          who knew him. This site serves as a resource for all who wish to
-          celebrate his life.
-        </p>
-        <p className="Intro text-sm">
-          Here, you will find information about the burial ceremony, including
-          directions to the venue, live stream access for those unable to
-          attend, and ways to offer support. You can also leave heartfelt
-          messages and wishes for the family, ensuring you're part of this
-          special moment.
+          Celebrate the life and legacy of Chief Martins Dafe Abu, a beloved
+          leader and cherished soul, through this memorial site, you can find
+          burial details, offer support, and share messages of remembrance.
         </p>
       </div>
     </section>
