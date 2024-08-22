@@ -14,7 +14,7 @@ module.exports = {
         VeryDarkViolet: "hsl(260, 8%, 14%)",
       },
       screens: {
-        md: "750px" /* Tablet */,
+        md: "768px" /* Tablet */,
         lg: "1024px" /* Laptop */,
         xl: "1232px" /* Large Screens */,
         "2xl": "1390px" /*Very Large Screens */,
