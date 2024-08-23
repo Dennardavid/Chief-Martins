@@ -75,7 +75,7 @@ export default function Navbar() {
               <li
                 key={index}
                 ref={(el) => (navItemsRef.current[index] = el)}
-                className="navItems"
+                className="capitalize"
               >
                 <Link href={href}>{href.split("/")[1].replace(/-/g, " ")}</Link>
               </li>
@@ -92,7 +92,7 @@ export default function Navbar() {
         {/* Desktop Menus */}
         <ul className="hidden lg:flex md:gap-5 xl:gap-10 md:text-base 2xl:text-xl">
           <li>
-            <Link href="/order-of-events">Order of Events</Link>
+            <Link href="/order-of-events">Order Of Events</Link>
           </li>
           <li>
             <Link href="/direction">Direction</Link>
