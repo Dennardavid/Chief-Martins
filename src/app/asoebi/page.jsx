@@ -1,3 +1,5 @@
+import Navbar from "../components/navbar";
+
 export default function AsoebiPage() {
   return (
     <div className="bg-slate-500 min-h-screen">

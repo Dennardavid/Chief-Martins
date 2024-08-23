@@ -1,3 +1,6 @@
+import Navbar from "../components/navbar";
+
+
 export default function LogisticsPage() {
   return (
     <div className="bg-slate-500 min-h-screen">
