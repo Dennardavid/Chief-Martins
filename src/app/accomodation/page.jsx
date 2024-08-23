@@ -1,7 +1,8 @@
 export default function AccomodationPage() {
   return (
-    <div>
-      <h1> Accomodation Page</h1>
+    <div className="bg-slate-500 min-h-screen">
+      <Navbar />
+      <h1 className="text-black">Accomodation Page</h1>
     </div>
   );
 }

@@ -1,7 +1,10 @@
 export default function DonationPage() {
   return (
     <div>
-      <h1>DonationPage</h1>
+      <div className="bg-slate-500 min-h-screen">
+        <Navbar />
+        <h1 className="text-black">Donation Page</h1>
+      </div>
     </div>
   );
 }

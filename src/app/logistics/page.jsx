@@ -1,7 +1,8 @@
 export default function LogisticsPage() {
   return (
-    <div>
-      <h1>LogisticsPage</h1>
+    <div className="bg-slate-500 min-h-screen">
+      <Navbar />
+      <h1 className="text-black">Logistics Page</h1>
     </div>
   );
 }

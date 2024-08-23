@@ -1,7 +1,8 @@
 export default function DirectionPage() {
   return (
-    <div>
-      <h1>Direction Page </h1>
+    <div className="bg-slate-500 min-h-screen">
+      <Navbar />
+      <h1 className="text-black">Direction Page </h1>
     </div>
   );
 }
