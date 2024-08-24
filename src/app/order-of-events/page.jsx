@@ -36,7 +36,7 @@ export default function OrderOfEvents() {
           <Navbar />
 
           <div className="fixed inset-0 -z-50 w-[100%] min-h-screen bg-gradient-to-r from-black xl:from-5% ">
-            <div className="text-white m-auto lg:ml-10 p-3 xl:p-5 w-[95%] lg:w-[600px] 2xl:w-[800px] bg-black backdrop-filter bg-opacity-30 backdrop-blur rounded-xl shadow-md shadow-white/20 text-justify relative top-[50%] md:top-[60%] lg:top-[45%] xl:top-[35%] 2xl:top-[40%]">
+            <div className="text-white flex flex-col justify-center items-center lg:block m-auto lg:ml-10 p-3 xl:p-5 w-full lg:h-2/4 h-screen lg:w-[600px] 2xl:w-[800px] bg-black backdrop-filter bg-opacity-30 backdrop-blur rounded-xl shadow-md shadow-white/20 text-justify relative lg:top-[45%] xl:top-[35%] 2xl:top-[40%]">
               <h1 className="header font-extrabold text-2xl md:text-3xl lg:text-4xl 2xl:text-6xl">
                 Order Of Events
               </h1>
