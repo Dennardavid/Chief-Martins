@@ -34,7 +34,7 @@ export default function Hero() {
           UN Peace Ambassador, Legend of Niger Delta.
         </h2>
       </div>
-      <div className="md:w-[500px] lg:w-[600px] 2xl:w-[800px] flex flex-col gap-2 md:mt-2 md:gap-4 p-4 md:p-5 bg-amber-950 backdrop-filter bg-opacity-30 backdrop-blur rounded-xl shadow-md shadow-white/30 text-justify">
+      <div className="md:w-[500px] lg:w-[600px] 2xl:w-[800px] flex flex-col gap-2 md:mt-2 md:gap-4 p-4 md:p-5 bg-amber-950 backdrop-filter bg-opacity-30 backdrop-blur rounded-xl shadow-md shadow-white/20 text-justify">
         <p className="Intro text-base md:text-xl 2xl:text-2xl font-bold">
           Honoring a Life of Love and Fulfillment
         </p>
