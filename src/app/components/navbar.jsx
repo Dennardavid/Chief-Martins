@@ -66,7 +66,7 @@ export default function Navbar() {
             {[
               "/order-of-events",
               "/direction",
-              "/accomodation",
+              "/accommodation",
               "/logistics",
               "/asoebi",
               "/donation",
@@ -98,7 +98,7 @@ export default function Navbar() {
             <Link href="/direction">Direction</Link>
           </li>
           <li>
-            <Link href="/accomodation">Accomodation</Link>
+            <Link href="/accomodation">Accommodation</Link>
           </li>
           <li>
             <Link href="/logistics">Logistics</Link>
