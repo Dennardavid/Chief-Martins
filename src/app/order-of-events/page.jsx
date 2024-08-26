@@ -55,7 +55,7 @@ export default function OrderOfEvents() {
               <p className="Intro text-base md:text-base 2xl:text-xl mt-1">
                 12:00am: Interment
               </p>
-              <p className="Intro text-sm md:text-base 2xl:text-xl mt-1">
+              <p className="Intro text-base md:text-base 2xl:text-xl mt-1">
                 1:00pm: Social Activities/Entertainment of Guest @ White House
                 Compound Arochukwu
               </p>
@@ -63,7 +63,7 @@ export default function OrderOfEvents() {
               <h2 className="header2 font-extrabold text-base md:text-lg lg:text-xl 2xl:text-2xl lg:mt-2">
                 Sunday 6th September 2024
               </h2>
-              <p className="Intro text-sm md:text-base 2xl:text-xl mt-1">
+              <p className="Intro text-base md:text-base 2xl:text-xl mt-1">
                 Outing/Thanksgiving Service
               </p>
             </div>
