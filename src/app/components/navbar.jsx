@@ -50,7 +50,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="text-white">
+    <header className="text-white sticky top-0">
       <nav className="flex justify-between items-center lg:hover:bg-slate-50 lg:hover:backdrop-filter lg:hover:bg-opacity-15 lg:hover:backdrop-blur-md px-2 py-1 md:px-8 lg:px-10 ease-in-out duration-500">
         <Link href="/">
           <img src="/logo.webp" alt="logo" className="w-14 md:w-16 lg:w-20" />
@@ -70,7 +70,7 @@ export default function Navbar() {
               "/logistics",
               "/asoebi",
               "/donation",
-              "/gallery",
+              
             ].map((href, index) => (
               <li
                 key={index}
@@ -108,9 +108,6 @@ export default function Navbar() {
           </li>
           <li>
             <Link href="/donation">Donation</Link>
-          </li>
-          <li>
-            <Link href="/gallery">Gallery</Link>
           </li>
         </ul>
 
