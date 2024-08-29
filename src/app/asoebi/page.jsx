@@ -1,10 +1,11 @@
 import Navbar from "../components/navbar";
+import Asoebi from "../components/asoebi";
 
 export default function AsoebiPage() {
   return (
-    <div className="bg-slate-500 min-h-screen">
+    <div className="bg-amber-950/90 min-h-screen">
       <Navbar />
-      <h1 className="text-black">Asoebi Page</h1>
+      <Asoebi />
     </div>
   );
 }
