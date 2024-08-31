@@ -4,11 +4,17 @@ import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { IoMenuSharp, IoCloseSharp } from "react-icons/io5";
 import gsap from "gsap";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const navbarRef = useRef(null);
   const navItemsRef = useRef([]);
+  const pathname = usePathname();
+
+  const isAsoebiPage = pathname === "/asoebi";
+
+  console.log("isAsoebiPage", isAsoebiPage);
 
   useEffect(() => {
     if (menuOpen) {
@@ -50,8 +56,16 @@ export default function Navbar() {
   };
 
   return (
-    <header className="text-white sticky top-0">
-      <nav className="flex justify-between items-center lg:hover:bg-slate-50 lg:hover:backdrop-filter lg:hover:bg-opacity-15 lg:hover:backdrop-blur-md px-2 py-1 md:px-8 lg:px-10 ease-in-out duration-500">
+    <header
+      className={`${isAsoebiPage ? "text-black" : "text-white"} sticky top-0`}
+    >
+      <nav
+        className={`flex justify-between items-center  ${
+          isAsoebiPage
+            ? `lg:bg-amber-950/50 text-white`
+            : `lg:hover:bg-white/20`
+        }  lg:hover:backdrop-filter lg:hover:bg-opacity-15 lg:hover:backdrop-blur-md px-2 py-1 md:px-8 lg:px-10 ease-in-out duration-500`}
+      >
         <Link href="/">
           <img src="/logo.webp" alt="logo" className="w-14 md:w-16 lg:w-20" />
         </Link>
@@ -59,7 +73,7 @@ export default function Navbar() {
         {/* Mobile Menus */}
         <div
           ref={navbarRef}
-          className="navbar fixed top-0 right-0 text-white bg-amber-950 backdrop-filter bg-opacity-30 backdrop-blur z-50 w-[80%] h-[55%] flex flex-col justify-center items-center gap-5 p-8 lg:hidden md:gap-5 xl:gap-10 md:text-base 2xl:text-xl"
+          className="fixed top-0 right-0 text-white bg-amber-950 backdrop-filter bg-opacity-30 backdrop-blur z-50 w-[80%] h-[55%] flex flex-col justify-center items-center gap-5 p-8 lg:hidden md:gap-5 xl:gap-10 md:text-base 2xl:text-xl"
           style={{ transform: "translateX(100%)" }}
         >
           <ul className="list-none w-full flex flex-col gap-4 items-center">
@@ -70,7 +84,6 @@ export default function Navbar() {
               "/logistics",
               "/asoebi",
               "/donation",
-              
             ].map((href, index) => (
               <li
                 key={index}
