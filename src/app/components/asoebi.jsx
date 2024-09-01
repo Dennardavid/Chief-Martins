@@ -2,7 +2,7 @@
 
 import Cart from "./icons/cart";
 import Close from "./icons/close";
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import gsap from "gsap";
 
 export default function Asoebi() {
@@ -10,22 +10,11 @@ export default function Asoebi() {
   const [animationDone, setAnimationDone] = useState(true);
   const checkoutRef = useRef(null);
 
-  useEffect(() => {
+  const toggleCheckout = () => {
     setAnimationDone(false);
 
     if (checkoutOpen) {
-      gsap.to(checkoutRef.current, {
-        width: "35%",
-        duration: 0.5,
-        ease: "power3.inOut",
-        onComplete: () => setAnimationDone(true),
-      });
-      gsap.to("#content-section", {
-        width: "65%",
-        duration: 0.5,
-        ease: "power3.inOut",
-      });
-    } else {
+      // Close the checkout section
       gsap.to(checkoutRef.current, {
         width: "0%",
         duration: 0.5,
@@ -37,10 +26,21 @@ export default function Asoebi() {
         duration: 0.5,
         ease: "power3.inOut",
       });
+    } else {
+      // Open the checkout section
+      gsap.to(checkoutRef.current, {
+        width: "35%",
+        duration: 0.5,
+        ease: "power3.inOut",
+        onComplete: () => setAnimationDone(true),
+      });
+      gsap.to("#content-section", {
+        width: "65%",
+        duration: 0.5,
+        ease: "power3.inOut",
+      });
     }
-  }, [checkoutOpen]);
 
-  const toggleCheckout = () => {
     setCheckoutOpen(!checkoutOpen);
   };
 
@@ -80,13 +80,13 @@ export default function Asoebi() {
         className="bg-amber-950/50 w-0 overflow-hidden transition-all duration-500 z-40"
       >
         <div className="flex w-full justify-between px-2">
-          <h1 className="p-4">Checkout</h1>
-          <button onClick={toggleCheckout} className="">
+          <h1 className="p-4 text-white font-semibold">Checkout</h1>
+          <button onClick={toggleCheckout} className="text-white">
             <Close />
           </button>
         </div>
       </section>
-      { animationDone && !checkoutOpen &&  (
+      {animationDone && !checkoutOpen && (
         <button
           onClick={toggleCheckout}
           className="absolute top-32 right-5 bg-amber-950/90 text-white p-4 rounded-full"
