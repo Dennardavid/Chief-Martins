@@ -7,18 +7,18 @@ import gsap from "gsap";
 
 export default function Asoebi() {
   const [checkoutOpen, setCheckoutOpen] = useState(false);
-  
+  const [animationDone, setAnimationDone] = useState(true);
   const checkoutRef = useRef(null);
 
   useEffect(() => {
-   
+    setAnimationDone(false);
 
     if (checkoutOpen) {
       gsap.to(checkoutRef.current, {
         width: "35%",
         duration: 0.5,
         ease: "power3.inOut",
-       
+        onComplete: () => setAnimationDone(true),
       });
       gsap.to("#content-section", {
         width: "65%",
@@ -30,7 +30,7 @@ export default function Asoebi() {
         width: "0%",
         duration: 0.5,
         ease: "power3.inOut",
-        
+        onComplete: () => setAnimationDone(true),
       });
       gsap.to("#content-section", {
         width: "100%",
@@ -77,7 +77,7 @@ export default function Asoebi() {
       </section>
       <section
         ref={checkoutRef}
-        className="bg-gray-600 w-0 overflow-hidden transition-all duration-500 z-40"
+        className="bg-amber-950/50 w-0 overflow-hidden transition-all duration-500 z-40"
       >
         <div className="flex w-full justify-between px-2">
           <h1 className="p-4">Checkout</h1>
@@ -86,7 +86,7 @@ export default function Asoebi() {
           </button>
         </div>
       </section>
-      { !checkoutOpen && (
+      { animationDone && !checkoutOpen &&  (
         <button
           onClick={toggleCheckout}
           className="absolute top-32 right-5 bg-amber-950/90 text-white p-4 rounded-full"
