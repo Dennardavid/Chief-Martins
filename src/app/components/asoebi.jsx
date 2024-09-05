@@ -2,7 +2,8 @@
 
 import Cart from "./icons/cart";
 import Close from "./icons/close";
-import { useState, useRef, useEffect } from "react";
+import Delete from "./icons/delete";
+import { useState, useRef } from "react";
 import gsap from "gsap";
 import Link from "next/link";
 
@@ -81,6 +82,45 @@ export default function Asoebi() {
     });
   };
 
+  const incrementItem = (itemName) => {
+    setCheckoutItems((prevItems) =>
+      prevItems.map((item) =>
+        item.name === itemName
+          ? {
+              ...item,
+              quantity: item.quantity + 1,
+              totalPrice: item.totalPrice + item.price,
+            }
+          : item
+      )
+    );
+  };
+
+  const decrementItem = (itemName) => {
+    setCheckoutItems((prevItems) =>
+      prevItems.map((item) =>
+        item.name === itemName && item.quantity > 1
+          ? {
+              ...item,
+              quantity: item.quantity - 1,
+              totalPrice: item.totalPrice - item.price,
+            }
+          : item
+      )
+    );
+  };
+
+  const deleteItem = (itemName) => {
+    setCheckoutItems((prevItems) =>
+      prevItems.filter((item) => item.name !== itemName)
+    );
+
+    // Optionally, hide the cart dot if no items are left
+    if (checkoutItems.length === 1) {
+      setShowCartDot(false);
+    }
+  };
+
   return (
     <section className="flex justify-between min-h-screen w-full">
       <section
@@ -122,7 +162,7 @@ export default function Asoebi() {
         className="bg-amber-950/50 w-0 overflow-hidden transition-all duration-500 z-40"
       >
         <div className="flex w-full justify-between px-2">
-          <h1 className="p-4 text-white font-semibold">Checkout</h1>
+          <h1 className="p-4 text-white text-lg font-semibold">Checkout</h1>
           <button onClick={toggleCheckout} className="text-white">
             <Close />
           </button>
@@ -141,29 +181,49 @@ export default function Asoebi() {
                       alt={item.name}
                       className="w-16 h-16 object-cover mr-4 bg-[#e3e3e3] p-1 rounded-md"
                     />
-                    <span>{item.name}</span>
-                    <span>
-                      &#8358;{item.totalPrice.toLocaleString()} ({item.quantity}
-                      )
-                    </span>
+                    <div className="flex flex-col gap-2">
+                      <span>{item.name}</span>
+                      <div className="flex items-center gap-x-2">
+                        <button
+                          onClick={() => decrementItem(item.name)}
+                          className="bg-gray-300 text-black py-1 px-2 rounded-md"
+                        >
+                          -
+                        </button>
+                        <span>{item.quantity}</span>
+                        <button
+                          onClick={() => incrementItem(item.name)}
+                          className="bg-gray-300 text-black py-1 px-2 rounded-md"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+                    <span>&#8358;{item.totalPrice.toLocaleString()}</span>
+                    <button
+                      onClick={() => deleteItem(item.name)}
+                      className="bg-red-500 text-white py-1 px-1 rounded-md"
+                    >
+                      <Delete />
+                    </button>
                   </li>
                 ))}
               </ul>
 
               <div className="flex flex-col gap-2 mt-5 text-white">
                 <p>
-                  make payment of &#8358;
+                  Make payment of &#8358;
                   {checkoutItems
                     .reduce((acc, item) => acc + item.totalPrice, 0)
                     .toLocaleString()}
                   ;
                 </p>
-                <p>Account details : 9012144154, ASOEBI, Opay. Please use</p>
+                <p>Account details: 9012144154, ASOEBI, Opay. Please use</p>
                 <Link
                   href="https://wa.link/xikkz2"
                   className="bg-amber-950/90 py-2 px-8 text-white rounded-md shadow-md text-center"
                 >
-                  <button>show proof of payment</button>
+                  <button>Show Proof of Payment</button>
                 </Link>
               </div>
             </div>
