@@ -14,8 +14,6 @@ export default function Navbar() {
 
   const isAsoebiPage = pathname === "/asoebi";
 
-  console.log("isAsoebiPage", isAsoebiPage);
-
   useEffect(() => {
     if (menuOpen) {
       gsap.to(navbarRef.current, {
