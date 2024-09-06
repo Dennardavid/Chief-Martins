@@ -13,6 +13,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   const isAsoebiPage = pathname === "/asoebi";
+  const isAccommodationPage = pathname === "/accomodation";
 
   useEffect(() => {
     if (menuOpen) {
@@ -59,7 +60,7 @@ export default function Navbar() {
     >
       <nav
         className={`flex justify-between items-center  ${
-          isAsoebiPage
+          isAsoebiPage || isAccommodationPage
             ? `lg:bg-amber-950/50 text-white`
             : `lg:hover:bg-white/20`
         }  lg:hover:backdrop-filter lg:hover:bg-opacity-15 lg:hover:backdrop-blur-md px-2 py-1 md:px-8 lg:px-10 ease-in-out duration-500`}

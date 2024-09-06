@@ -136,11 +136,11 @@ export default function Asoebi() {
             className="w-1/4 p-4 rounded-lg bg-white shadow-md hover:shadow-2xl hover:shadow-black/30 transition-all text-center"
           >
             <h1 className="text-lg font-semibold my-2">{item.name}</h1>
-            <div className="max-w-[437px] max-h-[437px] relative">
+            <div className="max-w-[437px] max-h-[437px]">
               <img
                 src={item.img}
                 alt="asoebi material"
-                className="w-full h-full object-cover bg-[#e3e3e3] p-1 rounded-md"
+                className="w-full max-h-[420px] object-contain bg-[#e3e3e3] p-1 rounded-md"
               />
             </div>
             <div className="flex flex-col gap-y-2">
@@ -212,13 +212,15 @@ export default function Asoebi() {
 
               <div className="flex flex-col gap-2 mt-5 text-white">
                 <p>
-                  Make payment of &#8358;
+                  Amount: &#8358;
                   {checkoutItems
                     .reduce((acc, item) => acc + item.totalPrice, 0)
                     .toLocaleString()}
                   ;
                 </p>
-                <p>Account details: 9012144154, ASOEBI, Opay. Please use</p>
+                <p>Bank Name: Opay</p>
+                <p>Account Number: 9012144154</p>
+                <p>Account Name: Dennar David Ifeanyichukwu</p>
                 <Link
                   href="https://wa.link/xikkz2"
                   className="bg-amber-950/90 py-2 px-8 text-white rounded-md shadow-md text-center"
