@@ -56,12 +56,12 @@ export default function Navbar() {
 
   return (
     <header
-      className={`${isAsoebiPage ? "text-black" : "text-white"} sticky top-0`}
+      className={`${isAsoebiPage ? "text-black" : "text-white"} sticky top-0 z-50`}
     >
       <nav
         className={`flex justify-between items-center  ${
           isAsoebiPage || isAccommodationPage
-            ? `lg:bg-amber-950/50 text-white`
+            ? `lg:bg-amber-950/50 text-white backdrop-blur-md`
             : `lg:hover:bg-white/20`
         }  lg:hover:backdrop-filter lg:hover:bg-opacity-15 lg:hover:backdrop-blur-md px-2 py-1 md:px-8 lg:px-10 ease-in-out duration-500`}
       >

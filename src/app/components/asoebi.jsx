@@ -222,6 +222,7 @@ export default function Asoebi() {
                 <p>Account Number: 9012144154</p>
                 <p>Account Name: Dennar David Ifeanyichukwu</p>
                 <Link
+                target="_blank"
                   href="https://wa.link/xikkz2"
                   className="bg-amber-950/90 py-2 px-8 text-white rounded-md shadow-md text-center"
                 >
