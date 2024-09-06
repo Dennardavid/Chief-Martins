@@ -30,7 +30,7 @@ export default function Accomodation() {
     <div className="h-full flex gap-10 justify-center mt-5 ">
       {hotels.map((hotel) => (
         <article className="bg-white p-3 rounded-md shadow-md" key={hotel.contact}>
-          <div className="w-[500px] h-[350px]">
+          <div className="w-[500px] h-[300px]">
             <img
               src={hotel.image}
               alt={hotel.name}

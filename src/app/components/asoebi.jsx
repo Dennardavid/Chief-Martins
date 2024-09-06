@@ -128,8 +128,8 @@ export default function Asoebi() {
         className="flex gap-5 items-center justify-evenly w-full transition-all duration-500"
       >
         {[
-          { name: "UE WAX", price: 20000, img: "material1.png" },
-          { name: "CIHIGAVY", price: 20000, img: "material2.png" },
+          { name: "UE WAX", price: 10000, img: "material1.png" },
+          { name: "CIHIGAVY", price: 10000, img: "material2.png" },
         ].map((item, index) => (
           <div
             key={index}

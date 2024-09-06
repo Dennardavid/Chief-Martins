@@ -79,7 +79,7 @@ export default function Navbar() {
             {[
               "/order-of-events",
               "/direction",
-              "/accommodation",
+              "/accomodation",
               "/logistics",
               "/asoebi",
               "/donation",
