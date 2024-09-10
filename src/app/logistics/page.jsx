@@ -1,11 +1,11 @@
 import Navbar from "../components/navbar";
-
+import Logistics from "../components/logistics";
 
 export default function LogisticsPage() {
   return (
-    <div className="bg-slate-500 min-h-screen">
+    <div className="bg-[#e3e3e3] min-h-screen">
       <Navbar />
-      <h1 className="text-black">Logistics Page</h1>
+      <Logistics />
     </div>
   );
 }

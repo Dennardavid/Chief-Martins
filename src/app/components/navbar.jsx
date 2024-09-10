@@ -14,6 +14,9 @@ export default function Navbar() {
 
   const isAsoebiPage = pathname === "/asoebi";
   const isAccommodationPage = pathname === "/accomodation";
+  const isLogisticsPage = pathname === "/logistics";
+  const isDirectionPage = pathname === "/direction";
+  const isDonationPage = pathname === "/donation";
 
   useEffect(() => {
     if (menuOpen) {
@@ -56,12 +59,18 @@ export default function Navbar() {
 
   return (
     <header
-      className={`${isAsoebiPage ? "text-black" : "text-white"} sticky top-0 z-50`}
+      className={`${
+        isAsoebiPage ? "text-black" : "text-white"
+      } sticky top-0 z-50`}
     >
       <nav
         className={`flex justify-between items-center  ${
-          isAsoebiPage || isAccommodationPage
-            ? `lg:bg-amber-950/50 text-white backdrop-blur-md`
+          isAsoebiPage ||
+          isAccommodationPage ||
+          isLogisticsPage ||
+          isDirectionPage ||
+          isDonationPage
+            ? `lg:bg-amber-950/50 text-white backdrop-blur-md backdrop-filter`
             : `lg:hover:bg-white/20`
         }  lg:hover:backdrop-filter lg:hover:bg-opacity-15 lg:hover:backdrop-blur-md px-2 py-1 md:px-8 lg:px-10 ease-in-out duration-500`}
       >
@@ -103,6 +112,9 @@ export default function Navbar() {
 
         {/* Desktop Menus */}
         <ul className="hidden lg:flex md:gap-5 xl:gap-10 md:text-base 2xl:text-xl">
+          <li>
+            <Link href="/">Home</Link>
+          </li>
           <li>
             <Link href="/order-of-events">Order Of Events</Link>
           </li>

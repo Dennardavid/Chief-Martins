@@ -39,6 +39,13 @@ export default function Accomodation() {
       website: "https://www.bedouinhotelsltd.com/",
       image: "/Bedouin.jpg",
     },
+    {
+      name: "Bedouin Hotel & Suites",
+      location: "NO 5 Rev. J. Oloye Street, Ugbolokposo, Effurun, Delta",
+      contact: "+234 810 665 6662",
+      website: "https://www.bedouinhotelsltd.com/",
+      image: "/Bedouin.jpg",
+    },
   ];
 
   return (
