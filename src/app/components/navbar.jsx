@@ -12,6 +12,8 @@ export default function Navbar() {
   const navItemsRef = useRef([]);
   const pathname = usePathname();
 
+  const isActiveLink = (path) => pathname === path;
+
   const isAsoebiPage = pathname === "/asoebi";
   const isAccommodationPage = pathname === "/accomodation";
   const isLogisticsPage = pathname === "/logistics";
@@ -86,19 +88,27 @@ export default function Navbar() {
         >
           <ul className="list-none w-full flex flex-col gap-4 items-center">
             {[
-              "/order-of-events",
-              "/direction",
-              "/accomodation",
-              "/logistics",
-              "/asoebi",
-              "/donation",
-            ].map((href, index) => (
+              { path: "/", label: "Home" },
+              { path: "/order-of-events", label: "Order Of Events" },
+              { path: "/direction", label: "Direction" },
+              { path: "/accomodation", label: "Accommodation" },
+              { path: "/logistics", label: "Logistics" },
+              { path: "/asoebi", label: "Asoebi" },
+              { path: "/gifts", label: "Gifts" },
+            ].map(({ path, label }, index) => (
               <li
                 key={index}
                 ref={(el) => (navItemsRef.current[index] = el)}
-                className="capitalize"
+                className={`group capitalize`}
               >
-                <Link href={href}>{href.split("/")[1].replace(/-/g, " ")}</Link>
+                <Link href={path} className="flex flex-col items-center">
+                  {label}
+                  <div
+                    className={`bg-white h-[2px] ${
+                      isActiveLink(path) ? "w-full" : "w-0 group-hover:w-full"
+                    } transition-all duration-500`}
+                  ></div>
+                </Link>
               </li>
             ))}
           </ul>
@@ -112,27 +122,30 @@ export default function Navbar() {
 
         {/* Desktop Menus */}
         <ul className="hidden lg:flex md:gap-5 xl:gap-10 md:text-base 2xl:text-xl">
-          <li>
-            <Link href="/">Home</Link>
-          </li>
-          <li>
-            <Link href="/order-of-events">Order Of Events</Link>
-          </li>
-          <li>
-            <Link href="/direction">Direction</Link>
-          </li>
-          <li>
-            <Link href="/accomodation">Accommodation</Link>
-          </li>
-          <li>
-            <Link href="/logistics">Logistics</Link>
-          </li>
-          <li>
-            <Link href="/asoebi">Asoebi</Link>
-          </li>
-          <li>
-            <Link href="/donation">Donation</Link>
-          </li>
+          {[
+            { path: "/", label: "Home" },
+            { path: "/order-of-events", label: "Order Of Events" },
+            { path: "/direction", label: "Direction" },
+            { path: "/accomodation", label: "Accommodation" },
+            { path: "/logistics", label: "Logistics" },
+            { path: "/asoebi", label: "Asoebi" },
+            { path: "/gifts", label: "Gifts" },
+          ].map(({ path, label }, index) => (
+            <li
+              key={index}
+              className={`group`}
+            >
+              <Link href={path} className="flex flex-col items-center">
+                {label}
+                {/* Add the underline animation div */}
+                <div
+                  className={`bg-white h-[2px] ${
+                    isActiveLink(path) ? "w-full" : "w-0 group-hover:w-full"
+                  } transition-all duration-500`}
+                ></div>
+              </Link>
+            </li>
+          ))}
         </ul>
 
         <button onClick={toggleMenu} className="flex lg:hidden">

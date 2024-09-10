@@ -28,7 +28,7 @@ export default function Hero() {
           Chief Martins Dafe Abu
         </h1>
         <h2 className="header font-extrabold text-2xl md:text-3xl lg:text-5xl 2xl:text-6xl lg:mt-2">
-          Akehro of Olomu Kingdom
+          Akhero of Olomu Kingdom
         </h2>
         <h2 className="title font-medium text-base md:text-xl lg:text-2xl lg:mt-2 2xl:text-3xl">
           UN Peace Ambassador, Legend of Niger Delta.
