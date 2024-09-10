@@ -128,8 +128,8 @@ export default function Asoebi() {
         className="flex gap-5 items-center justify-evenly w-full transition-all duration-500"
       >
         {[
-          { name: "UE WAX", price: 5000, img: "material1.webp" },
           { name: "CIHIGAVY", price: 15000, img: "material2.webp" },
+          { name: "UE WAX", price: 5000, img: "material1.webp" },
         ].map((item, index) => (
           <div
             key={index}
@@ -144,8 +144,8 @@ export default function Asoebi() {
               />
             </div>
             <div className="flex flex-col gap-y-2">
-              <span className="my-2 font-medium">
-                &#8358;{item.price.toLocaleString()}
+              <span className="my-2 font-medium text-xl">
+                &#8358;{item.price.toLocaleString()} Per Yard
               </span>
               <button
                 className="bg-amber-950/90 py-2 px-8 text-white rounded-md shadow-md"
@@ -222,7 +222,7 @@ export default function Asoebi() {
                 <p>Account Number: 9012144154</p>
                 <p>Account Name: Dennar David Ifeanyichukwu</p>
                 <Link
-                target="_blank"
+                  target="_blank"
                   href="https://wa.link/xikkz2"
                   className="bg-amber-950/90 py-2 px-8 text-white rounded-md shadow-md text-center"
                 >

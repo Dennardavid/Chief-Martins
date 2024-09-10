@@ -22,9 +22,12 @@ export default function Hero() {
   });
 
   return (
-    <section className="absolute px-4 md:px-8 lg:px-10 top-[50%] md:top-[40%] lg:top-[50%] xl:top-[45%] 2xl:top-[50%] flex flex-col md:block lg:flex-row  gap-2 justify-between text-white">
+    <section className="absolute px-4 md:px-8 lg:px-10 top-[50%] md:top-[40%] lg:top-[50%] xl:top-[45%] 2xl:top-[48%] flex flex-col md:block lg:flex-row  gap-2 justify-between text-white">
       <div>
-        <h1 className="header font-extrabold text-2xl md:text-3xl lg:text-5xl 2xl:text-6xl">
+        <h1 className="header font-extrabold text-base md:text-xl lg:text-3xl 2xl:text-4xl">
+          Join us as we celebrate the life of
+        </h1>
+        <h1 className="header font-extrabold text-2xl md:text-3xl lg:text-5xl 2xl:text-6xl lg:mt-2">
           Chief Martins Dafe Abu
         </h1>
         <h2 className="header font-extrabold text-2xl md:text-3xl lg:text-5xl 2xl:text-6xl lg:mt-2">
@@ -35,13 +38,13 @@ export default function Hero() {
         </h2>
       </div>
       <div className="md:w-[500px] lg:w-[600px] 2xl:w-[800px] flex flex-col gap-2 md:mt-2 md:gap-4 p-4 md:p-5 bg-amber-950 backdrop-filter bg-opacity-30 backdrop-blur rounded-xl shadow-md shadow-white/20 text-justify">
-        <p className="Intro text-base md:text-xl 2xl:text-2xl font-bold">
-          Honoring a Life of Love and Fulfillment
-        </p>
         <p className="Intro text-sm md:text-base 2xl:text-xl">
           Celebrating the life and legacy of Chief Martins Dafe Abu, a beloved
           leader and cherished soul, through this memorial site, you can find
           burial details, offer support, and share messages of remembrance.
+        </p>
+        <p className="Intro text-sm md:text-xl base:text-xl font-bold">
+          November 21st and 22nd, 2024
         </p>
       </div>
     </section>
