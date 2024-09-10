@@ -31,7 +31,7 @@ export default function OrderOfEvents() {
 
   return (
     <>
-      <main className="w-dvw bg-[url('/Chief-martins-small.png')] md:bg-[url('/Chief-martins-tab.png')] lg:bg-[url('/Chief-martins.png')] h-screen bg-cover bg-no-repeat pb-1">
+      <main className="w-dvw bg-[url('/Chief-martins-small.webp')] md:bg-[url('/Chief-martins-tab.webp')] lg:bg-[url('/Chief-martins.webp')] h-screen bg-cover bg-no-repeat pb-1">
         <div className="fixed inset-0 bg-black bg-opacity-10 z-0">
           <Navbar />
 
