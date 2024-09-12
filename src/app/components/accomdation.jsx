@@ -10,14 +10,6 @@ export default function Accomodation() {
       image: "/de-marvelz.jpeg",
     },
     {
-      name: "Victory View Hotel",
-      location: "No. 122 DSC Express Way, Ovwian Axis, Udu, Delta",
-      contact: "0810 106 4294",
-      website: "https://victoryviewhotel.com.ng/",
-      email: "victoryviewhotel@gmail.com",
-      image: "/victory-view.jpg",
-    },
-    {
       name: "Wetland Hotel",
       location: "Mofor junction, Ekete, Warri, Delta",
       contact: "+2348170574979",
@@ -51,7 +43,7 @@ export default function Accomodation() {
 
   return (
     <>
-      <p className="text-center mt-8 font-semibold text-xl">
+      <p className="text-center mt-8 font-semibold text-xl uppercase">
         All bookings Should be made at least a week before the event to ensure
         smooth process.
       </p>

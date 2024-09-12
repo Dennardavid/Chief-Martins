@@ -128,7 +128,7 @@ export default function Asoebi() {
         className="flex gap-5 items-center justify-evenly w-full transition-all duration-500"
       >
         {[
-          { name: "CIHIGAVY", price: 15000, img: "material2.webp" },
+          { name: "CIHIGAVY", price: 10000, img: "material2.webp" },
           { name: "UE WAX", price: 5000, img: "material1.webp" },
         ].map((item, index) => (
           <div

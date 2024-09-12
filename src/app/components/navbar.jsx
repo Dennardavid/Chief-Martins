@@ -18,7 +18,7 @@ export default function Navbar() {
   const isAccommodationPage = pathname === "/accomodation";
   const isLogisticsPage = pathname === "/logistics";
   const isDirectionPage = pathname === "/direction";
-  const isDonationPage = pathname === "/donation";
+  const isDonationPage = pathname === "/gifts";
 
   useEffect(() => {
     if (menuOpen) {
