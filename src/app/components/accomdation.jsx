@@ -28,7 +28,7 @@ export default function Accomodation() {
       name: "Clique Court Hotel & Suite",
       location: "Engr Kragha Layout, Okpaka, Warri, Delta",
       contact: "0911 474 7482",
-      website: "www.victoryview.com",
+      website: "https://tinyurl.com/2ndv6kwz",
       image: "/Clique.jpg",
     },
 
@@ -47,7 +47,7 @@ export default function Accomodation() {
         All bookings Should be made at least a week before the event to ensure
         smooth process.
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7 lg:gap-10 justify-center mt-5 pb-4 md:py-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7 2xl:gap-10 justify-center mt-5 pb-4 md:py-3">
         {hotels.map((hotel) => (
           <article
             className="bg-white p-3 rounded-md shadow-md hover:shadow-2xl hover:shadow-black/30 transition-all"

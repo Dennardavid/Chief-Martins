@@ -42,9 +42,9 @@ export default function Logistics() {
     { name: "Bolt App", image: "/bolt.png", contact: "" },
   ];
   return (
-    <section className="flex justify-between py-6">
-      <div className="flex flex-col gap-3 mx-10 w-2/4">
-        <h1 className="text-center my-4 font-semibold text-xl">
+    <section className="flex flex-col lg:flex-row lg:justify-between py-2 pb-5">
+      <div className="flex flex-col gap-3 mx-2 lg:mx-10 lg:w-2/4">
+        <h1 className="text-center mt-5 lg:my-4 font-semibold text-xl">
           Out of state Logistics Services
         </h1>
         {transportationOut.map((means) => (
@@ -69,8 +69,8 @@ export default function Logistics() {
         ))}
       </div>
 
-      <div className="flex flex-col gap-3 mx-10 -400 w-2/4">
-        <h1 className="text-center my-4 font-semibold text-xl">
+      <div className="flex flex-col gap-3 mx-2 lg:mx-10 lg:w-2/4">
+        <h1 className="text-center mt-5 lg:my-4 font-semibold text-xl">
           Within state Logistics Services
         </h1>
         {transportationIn.map((means) => (
