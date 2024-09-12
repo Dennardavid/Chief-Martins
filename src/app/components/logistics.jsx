@@ -34,6 +34,11 @@ export default function Logistics() {
       image: "/joe.png",
       contact: "0810 665 9381",
     },
+    {
+      name: "Newton logistics service",
+      image: "/joe.png",
+      contact: "0802 834 4637",
+    },
     { name: "Bolt App", image: "/bolt.png", contact: "" },
   ];
   return (

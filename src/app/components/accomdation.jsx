@@ -42,12 +42,12 @@ export default function Accomodation() {
   ];
 
   return (
-    <>
-      <p className="text-center mt-8 font-semibold text-xl uppercase">
+    <section className="px-2 md:px-8 lg:px-10">
+      <p className="text-center mt-5 lg:mt-8 font-semibold text-sm md:text-base lg:text-xl uppercase">
         All bookings Should be made at least a week before the event to ensure
         smooth process.
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-center mt-5 md:px-8 lg:px-10 md:py-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7 lg:gap-10 justify-center mt-5 pb-4 md:py-3">
         {hotels.map((hotel) => (
           <article
             className="bg-white p-3 rounded-md shadow-md hover:shadow-2xl hover:shadow-black/30 transition-all"
@@ -60,16 +60,18 @@ export default function Accomodation() {
                 className="w-full h-full object-cover rounded-md transform transition-transform duration-500 ease-in-out group-hover:scale-110"
               />
             </div>
-            <h3 className="mt-2 text-xl font-semibold text-center">
+            <h3 className="mt-2 text-base lg:text-lg 2xl:text-xl font-semibold text-center">
               {hotel.name}
             </h3>
             <div className="flex flex-col gap-2 mt-2">
-              <p className="text-base">Location: {hotel.location}</p>
-              <p className="text-base">Enquiries/Booking: {hotel.contact}</p>
+              <p className="text-sm md:text-base">Location: {hotel.location}</p>
+              <p className="text-sm md:text-base">
+                Enquiries/Booking: {hotel.contact}
+              </p>
               <Link
                 target="_blank"
                 href={hotel.website}
-                className="text-lg text-white text-center bg-amber-950/90 rounded-md py-2"
+                className="text-sm text-white text-center md:text-base lg:text-lg bg-amber-950/90 rounded-md py-2"
               >
                 Visit Hotel Website
               </Link>
@@ -77,6 +79,6 @@ export default function Accomodation() {
           </article>
         ))}
       </div>
-    </>
+    </section>
   );
 }

@@ -14,6 +14,8 @@ export default function Navbar() {
 
   const isActiveLink = (path) => pathname === path;
 
+  const isHomePage = pathname === "/";
+  const isOrderOfEventsPage = pathname === "/order-of-events";
   const isAsoebiPage = pathname === "/asoebi";
   const isAccommodationPage = pathname === "/accomodation";
   const isLogisticsPage = pathname === "/logistics";
@@ -61,9 +63,15 @@ export default function Navbar() {
 
   return (
     <header
-      className={`${
+      className={` lg:bg-amber-950/0 ${
         isAsoebiPage ? "text-black" : "text-white"
-      } sticky top-0 z-50`}
+      }
+        ${
+          isHomePage || isOrderOfEventsPage
+            ? "bg-amber-950/0"
+            : "bg-amber-950/50"
+        }
+       sticky top-0 z-50`}
     >
       <nav
         className={`flex justify-between items-center  ${
@@ -131,10 +139,7 @@ export default function Navbar() {
             { path: "/asoebi", label: "Asoebi" },
             { path: "/gifts", label: "Gifts" },
           ].map(({ path, label }, index) => (
-            <li
-              key={index}
-              className={`group`}
-            >
+            <li key={index} className={`group`}>
               <Link href={path} className="flex flex-col items-center">
                 {label}
                 {/* Add the underline animation div */}
