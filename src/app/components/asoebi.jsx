@@ -125,7 +125,7 @@ export default function Asoebi() {
     <section className="flex justify-between min-h-screen w-full">
       <section
         id="content-section"
-        className="flex gap-5 items-center justify-evenly w-full transition-all duration-500"
+        className="flex flex-col md:flex-row gap-5 items-center justify-evenly w-full transition-all duration-500"
       >
         {[
           { name: "CIHIGAVY", price: 10000, img: "material2.webp" },
@@ -133,7 +133,7 @@ export default function Asoebi() {
         ].map((item, index) => (
           <div
             key={index}
-            className="w-1/4 p-4 rounded-lg bg-white shadow-md hover:shadow-2xl hover:shadow-black/30 transition-all text-center"
+            className="w-[90%] md:w-1/4 p-4 rounded-lg bg-white shadow-md hover:shadow-2xl hover:shadow-black/30 transition-all text-center"
           >
             <h1 className="text-lg font-semibold my-2">{item.name}</h1>
             <div className="max-w-[437px] max-h-[437px]">
