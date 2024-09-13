@@ -63,7 +63,7 @@ export default function Navbar() {
     <header
       className={`sticky top-0 z-30 ${
         isHomePage || isOrderOfEventsPage
-          ? "bg-amber-950/0 lg:hover:bg-white/20 lg:hover:backdrop-filter lg:hover:bg-opacity-15 lg:hover:backdrop-blur-md ease-in-out duration-500"
+          ? "bg-amber-950/0 backdrop-blur-none lg:hover:bg-white/20 lg:hover:backdrop-filter lg:hover:bg-opacity-15 lg:hover:backdrop-blur-md ease-in-out duration-500"
           : "bg-amber-950/50"
       } ${menuOpen ? "backdrop-blur-none" : "backdrop-blur-md"}`}
     >
