@@ -3,6 +3,13 @@ import Link from "next/link";
 export default function Accomodation() {
   const hotels = [
     {
+      name: "Reigns Hotel & Events Place",
+      location: "Arians crescent off emuobó Ono sorhue Road, Udu, Egini",
+      contact: "0912 089 6811",
+      website: "https://hotels.ng/hotel/1470606-the-arians-hotel-and-suites",
+      image: "/reigns.jpg",
+    },
+    {
       name: "De Marvelz Hotel & Coco Lounge",
       location: "Marvelz Street, Ovwian, Delta",
       contact: "0902 691 7278, 0704 337 3618",
@@ -31,7 +38,6 @@ export default function Accomodation() {
       website: "https://tinyurl.com/2ndv6kwz",
       image: "/Clique.jpg",
     },
-
     {
       name: "The Arians Hotel and Suites",
       location: "Arians crescent off emuobó Ono sorhue Road, Udu, Egini",

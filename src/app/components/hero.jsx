@@ -22,7 +22,7 @@ export default function Hero() {
   });
 
   return (
-    <section className="absolute px-4 md:px-8 lg:px-10 top-[50%] md:top-[40%] lg:top-[50%] xl:top-[45%] 2xl:top-[48%] flex flex-col md:block lg:flex-row  gap-2 justify-between text-white">
+    <section className="absolute px-4 md:px-8 lg:px-10 top-[50%] md:top-[40%] xl:top-[37%] 2xl:top-[48%] flex flex-col md:block lg:flex-row  gap-2 justify-between text-white">
       <div>
         <h1 className="header font-extrabold text-base md:text-xl lg:text-3xl 2xl:text-4xl">
           Join us as we celebrate the life of

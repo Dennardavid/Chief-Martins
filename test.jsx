@@ -1,171 +1,252 @@
 "use client";
 
-import Link from "next/link";
-import { useState, useEffect, useRef } from "react";
-import { IoMenuSharp, IoCloseSharp } from "react-icons/io5";
+import Cart from "./icons/cart";
+import Close from "./icons/close";
+import Delete from "./icons/delete";
+import { useState, useRef } from "react";
 import gsap from "gsap";
-import { usePathname } from "next/navigation";
+import Link from "next/link";
 
-export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const navbarRef = useRef(null);
-  const navItemsRef = useRef([]);
-  const pathname = usePathname();
+export default function Asoebi() {
+  const [checkoutOpen, setCheckoutOpen] = useState(false);
+  const [animationDone, setAnimationDone] = useState(true);
+  const [checkoutItems, setCheckoutItems] = useState([]);
+  const [showCartDot, setShowCartDot] = useState(false);
+  const checkoutRef = useRef(null);
+  const cartIconRef = useRef(null);
 
-  const isActiveLink = (path) => pathname === path;
+  const toggleCheckout = () => {
+    setAnimationDone(false);
 
-  const isHomePage = pathname === "/";
-  const isOrderOfEventsPage = pathname === "/order-of-events";
-  const isAsoebiPage = pathname === "/asoebi";
-  const isAccommodationPage = pathname === "/accomodation";
-  const isLogisticsPage = pathname === "/logistics";
-  const isDirectionPage = pathname === "/direction";
-  const isDonationPage = pathname === "/gifts";
-
-  useEffect(() => {
-    if (menuOpen) {
-      gsap.to(navbarRef.current, {
-        x: 0,
+    if (checkoutOpen) {
+      // Close the checkout section
+      gsap.to(checkoutRef.current, {
+        width: "0%",
+        duration: 0.5,
+        ease: "power3.inOut",
+        onComplete: () => setAnimationDone(true),
+      });
+      gsap.to("#content-section", {
+        width: "100%",
         duration: 0.5,
         ease: "power3.inOut",
       });
-      gsap.fromTo(
-        navItemsRef.current,
-        { x: 50, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          stagger: 0.1,
-          duration: 0.5,
-          delay: 0.2,
-          ease: "power3.inOut",
-        }
-      );
     } else {
-      gsap.to(navbarRef.current, {
-        x: "100%",
+      // Open the checkout section
+      gsap.to(checkoutRef.current, {
+        width: "35%",
         duration: 0.5,
         ease: "power3.inOut",
+        onComplete: () => setAnimationDone(true),
       });
-      gsap.to(navItemsRef.current, {
-        x: -50,
-        opacity: 0,
-        stagger: -0.1,
+      gsap.to("#content-section", {
+        width: "65%",
         duration: 0.5,
         ease: "power3.inOut",
       });
     }
-  }, [menuOpen]);
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+    setCheckoutOpen(!checkoutOpen);
   };
 
-  const URLs = [
-    { path: "/", label: "Home" },
-    { path: "/order-of-events", label: "Order Of Events" },
-    { path: "/direction", label: "Direction" },
-    { path: "/accomodation", label: "Accommodation" },
-    { path: "/logistics", label: "Logistics" },
-    { path: "/asoebi", label: "Asoebi" },
-    { path: "/gifts", label: "Gifts" },
-  ];
-  return (
-    <header
-      className={` lg:bg-amber-950/0 ${
-        isAsoebiPage ? "text-black" : "text-white"
+  const addToCheckout = (item) => {
+    setCheckoutItems((prevItems) => {
+      const existingItem = prevItems.find((i) => i.name === item.name);
+      if (existingItem) {
+        return prevItems.map((i) =>
+          i.name === item.name
+            ? {
+                ...i,
+                quantity: i.quantity + 1,
+                totalPrice: i.totalPrice + item.price,
+              }
+            : i
+        );
+      } else {
+        return [...prevItems, { ...item, quantity: 1, totalPrice: item.price }];
       }
-        ${
-          isHomePage || isOrderOfEventsPage
-            ? "bg-amber-950/0"
-            : "bg-amber-950/50"
-        }
-       sticky top-0 z-50`}
-    >
-      <nav
-        className={`flex justify-between items-center  ${
-          isAsoebiPage ||
-          isAccommodationPage ||
-          isLogisticsPage ||
-          isDirectionPage ||
-          isDonationPage
-            ? `lg:bg-amber-950/50 text-white backdrop-blur-md backdrop-filter`
-            : `lg:hover:bg-white/20`
-        }  lg:hover:backdrop-filter lg:hover:bg-opacity-15 lg:hover:backdrop-blur-md px-2 py-1 md:px-8 lg:px-10 ease-in-out duration-500`}
-      >
-        <Link href="/">
-          <img src="/logo.webp" alt="logo" className="w-14 md:w-16 lg:w-20" />
-        </Link>
+    });
 
-        {/* Mobile Menus */}
-        <div
-          ref={navbarRef}
-          className="fixed top-0 right-0 text-white bg-amber-950 backdrop-filter bg-opacity-30 backdrop-blur z-50 w-[80%] h-[55%] flex flex-col justify-center items-center gap-5 p-8 lg:hidden md:gap-5 xl:gap-10 md:text-base 2xl:text-xl"
-          style={{ transform: "translateX(100%)" }}
-        >
-          <ul className="list-none w-full flex flex-col gap-4 items-center">
-            {[
-              { path: "/", label: "Home" },
-              { path: "/order-of-events", label: "Order Of Events" },
-              { path: "/direction", label: "Direction" },
-              { path: "/accomodation", label: "Accommodation" },
-              { path: "/logistics", label: "Logistics" },
-              { path: "/asoebi", label: "Asoebi" },
-              { path: "/gifts", label: "Gifts" },
-            ].map(({ path, label }, index) => (
-              <li
-                key={index}
-                ref={(el) => (navItemsRef.current[index] = el)}
-                className={`group capitalize`}
-              >
-                <Link href={path} className="flex flex-col items-center">
-                  {label}
-                  <div
-                    className={`bg-white h-[2px] ${
-                      isActiveLink(path) ? "w-full" : "w-0 group-hover:w-full"
-                    } transition-all duration-500`}
-                  ></div>
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <button
-            onClick={toggleMenu}
-            className="flex lg:hidden absolute top-3 right-3 ease-in-out duration-500"
+    // Show the cart dot and trigger the bounce animation
+    setShowCartDot(true);
+    triggerContinuousBounce();
+  };
+
+  const triggerContinuousBounce = () => {
+    gsap.to(cartIconRef.current, {
+      y: -10,
+      duration: 1, 
+      ease: "power1.inOut",
+      yoyo: true,
+      repeat: -1, 
+    });
+  };
+
+  const incrementItem = (itemName) => {
+    setCheckoutItems((prevItems) =>
+      prevItems.map((item) =>
+        item.name === itemName
+          ? {
+              ...item,
+              quantity: item.quantity + 1,
+              totalPrice: item.totalPrice + item.price,
+            }
+          : item
+      )
+    );
+  };
+
+  const decrementItem = (itemName) => {
+    setCheckoutItems((prevItems) =>
+      prevItems.map((item) =>
+        item.name === itemName && item.quantity > 1
+          ? {
+              ...item,
+              quantity: item.quantity - 1,
+              totalPrice: item.totalPrice - item.price,
+            }
+          : item
+      )
+    );
+  };
+
+  const deleteItem = (itemName) => {
+    setCheckoutItems((prevItems) =>
+      prevItems.filter((item) => item.name !== itemName)
+    );
+
+    // Optionally, hide the cart dot if no items are left
+    if (checkoutItems.length === 1) {
+      setShowCartDot(false);
+    }
+  };
+
+  return (
+    <section className="flex justify-between w-full bg-green-400">
+      <section
+        id="content-section"
+        className="flex flex-col lg:flex-row gap-5 items-center justify-evenly w-full transition-all duration-500"
+      >
+        {[
+          { name: "CIHIGAVY", price: 10000, img: "material2.webp" },
+          { name: "UE WAX", price: 5000, img: "material1.webp" },
+        ].map((item, index) => (
+          <div
+            key={index}
+            className="w-[90%] md:w-1/4 p-4 rounded-lg bg-white shadow-md hover:shadow-2xl hover:shadow-black/30 transition-all text-center"
           >
-            <IoCloseSharp size={35} />
+            <h1 className="text-lg font-semibold my-2">{item.name}</h1>
+            <div className="max-w-[437px] max-h-[437px]">
+              <img
+                src={item.img}
+                alt="asoebi material"
+                className="w-full max-h-[420px] object-contain bg-[#e3e3e3] p-1 rounded-md"
+              />
+            </div>
+            <div className="flex flex-col gap-y-2">
+              <span className="my-2 font-medium text-xl">
+                &#8358;{item.price.toLocaleString()} Per Yard
+              </span>
+              <button
+                className="bg-amber-950/90 py-2 px-8 text-white rounded-md shadow-md"
+                onClick={() => addToCheckout(item)}
+              >
+                Order Now
+              </button>
+            </div>
+          </div>
+        ))}
+      </section>
+      <section
+        ref={checkoutRef}
+        className="bg-amber-950/50 w-0 absolute transition-all duration-500 z-40"
+      >
+        <div className="flex w-full justify-between px-2">
+          <h1 className="p-4 text-white text-lg font-semibold">Checkout</h1>
+          <button onClick={toggleCheckout} className="text-white">
+            <Close />
           </button>
         </div>
+        <div className="p-4">
+          {checkoutItems.length > 0 ? (
+            <div>
+              <ul>
+                {checkoutItems.map((item, index) => (
+                  <li
+                    key={index}
+                    className="flex justify-between items-center my-4 bg-white p-2 rounded-md shadow-md"
+                  >
+                    <img
+                      src={item.img}
+                      alt={item.name}
+                      className="w-16 h-16 object-cover mr-4 bg-[#e3e3e3] p-1 rounded-md"
+                    />
+                    <div className="flex flex-col gap-2">
+                      <span>{item.name}</span>
+                      <div className="flex items-center gap-x-2">
+                        <button
+                          onClick={() => decrementItem(item.name)}
+                          className="bg-gray-300 text-black py-1 px-2 rounded-md"
+                        >
+                          -
+                        </button>
+                        <span>{item.quantity}</span>
+                        <button
+                          onClick={() => incrementItem(item.name)}
+                          className="bg-gray-300 text-black py-1 px-2 rounded-md"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+                    <span>&#8358;{item.totalPrice.toLocaleString()}</span>
+                    <button
+                      onClick={() => deleteItem(item.name)}
+                      className="bg-red-500 text-white py-1 px-1 rounded-md"
+                    >
+                      <Delete />
+                    </button>
+                  </li>
+                ))}
+              </ul>
 
-        {/* Desktop Menus */}
-        <ul className="hidden lg:flex md:gap-5 xl:gap-10 md:text-base 2xl:text-xl">
-          {[
-            { path: "/", label: "Home" },
-            { path: "/order-of-events", label: "Order Of Events" },
-            { path: "/direction", label: "Direction" },
-            { path: "/accomodation", label: "Accommodation" },
-            { path: "/logistics", label: "Logistics" },
-            { path: "/asoebi", label: "Asoebi" },
-            { path: "/gifts", label: "Gifts" },
-          ].map(({ path, label }, index) => (
-            <li key={index} className={`group`}>
-              <Link href={path} className="flex flex-col items-center">
-                {label}
-                {/* Add the underline animation div */}
-                <div
-                  className={`bg-white h-[2px] ${
-                    isActiveLink(path) ? "w-full" : "w-0 group-hover:w-full"
-                  } transition-all duration-500`}
-                ></div>
-              </Link>
-            </li>
-          ))}
-        </ul>
-
-        <button onClick={toggleMenu} className="flex lg:hidden">
-          <IoMenuSharp size={35} />
+              <div className="flex flex-col gap-2 mt-5 text-white">
+                <p>
+                  Amount: &#8358;
+                  {checkoutItems
+                    .reduce((acc, item) => acc + item.totalPrice, 0)
+                    .toLocaleString()}
+                  ;
+                </p>
+                <p>Bank Name: Opay</p>
+                <p>Account Number: 9012144154</p>
+                <p>Account Name: Dennar David Ifeanyichukwu</p>
+                <Link
+                  target="_blank"
+                  href="https://wa.link/xikkz2"
+                  className="bg-amber-950/90 py-2 px-8 text-white rounded-md shadow-md text-center"
+                >
+                  <button>Show Proof of Payment</button>
+                </Link>
+              </div>
+            </div>
+          ) : (
+            <p className="text-white text-center">No items in checkout.</p>
+          )}
+        </div>
+      </section>
+      {animationDone && !checkoutOpen && (
+        <button
+          onClick={toggleCheckout}
+          className="absolute top-32 right-5 bg-amber-950/90 text-white p-4 rounded-full"
+          ref={cartIconRef}
+        >
+          <Cart />
+          {showCartDot && (
+            <span className="absolute top-0 right-0 w-3 h-3 bg-red-500 rounded-full"></span>
+          )}
         </button>
-      </nav>
-    </header>
+      )}
+    </section>
   );
 }

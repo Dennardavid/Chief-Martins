@@ -72,7 +72,7 @@ export default function Navbar() {
           <img src="/logo.webp" alt="logo" className="w-14 md:w-16 lg:w-20" />
         </Link>
         <div className="hidden items-center lg:flex">
-          <ul className="flex flex-col lg:flex-row items-center xl:gap-10 md:text-base 2xl:text-xl">
+          <ul className="flex flex-col lg:flex-row items-center lg:gap-8 xl:gap-10 md:text-base lg:text-xl">
             {URLs.map((url, index) => (
               <Link href={url.path}>
                 <li
@@ -95,7 +95,7 @@ export default function Navbar() {
         </div>
         <button
           onClick={toggleMenu}
-          className="lg:hidden text-white absolute top-[10px] right-0"
+          className="lg:hidden text-white absolute top-[10px] right-3 md:right-8"
         >
           <IoMenuSharp size={35} />
         </button>
@@ -130,7 +130,7 @@ export default function Navbar() {
           </ul>
           <button
             onClick={toggleMenu}
-            className="lg:hidden text-white absolute top-[10px] right-0"
+            className="lg:hidden text-white absolute top-[10px] right-3"
           >
             <IoCloseSharp size={35} />
           </button>

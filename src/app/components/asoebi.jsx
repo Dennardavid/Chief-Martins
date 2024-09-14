@@ -16,38 +16,12 @@ export default function Asoebi() {
   const cartIconRef = useRef(null);
 
   const toggleCheckout = () => {
-    setAnimationDone(false);
-
-    if (checkoutOpen) {
-      // Close the checkout section
-      gsap.to(checkoutRef.current, {
-        width: "0%",
-        duration: 0.5,
-        ease: "power3.inOut",
-        onComplete: () => setAnimationDone(true),
-      });
-      gsap.to("#content-section", {
-        width: "100%",
-        duration: 0.5,
-        ease: "power3.inOut",
-      });
-    } else {
-      // Open the checkout section
-      gsap.to(checkoutRef.current, {
-        width: "35%",
-        duration: 0.5,
-        ease: "power3.inOut",
-        onComplete: () => setAnimationDone(true),
-      });
-      gsap.to("#content-section", {
-        width: "65%",
-        duration: 0.5,
-        ease: "power3.inOut",
-      });
-    }
-
     setCheckoutOpen(!checkoutOpen);
   };
+  const materials = [
+    { name: "CIHIGAVY", price: 10000, img: "material2.webp" },
+    { name: "UE WAX", price: 5000, img: "material1.webp" },
+  ];
 
   const addToCheckout = (item) => {
     setCheckoutItems((prevItems) => {
@@ -75,10 +49,10 @@ export default function Asoebi() {
   const triggerContinuousBounce = () => {
     gsap.to(cartIconRef.current, {
       y: -10,
-      duration: 1, // Slow down the bounce
+      duration: 1,
       ease: "power1.inOut",
       yoyo: true,
-      repeat: -1, // Infinite repetition
+      repeat: -1,
     });
   };
 
@@ -122,33 +96,30 @@ export default function Asoebi() {
   };
 
   return (
-    <section className="flex justify-between min-h-screen w-full">
+    <section className="flex justify-between w-full mt-10">
       <section
         id="content-section"
-        className="flex flex-col md:flex-row gap-5 items-center justify-evenly w-full transition-all duration-500"
+        className="flex flex-col lg:flex-row gap-5 items-center justify-evenly w-full transition-all duration-500"
       >
-        {[
-          { name: "CIHIGAVY", price: 10000, img: "material2.webp" },
-          { name: "UE WAX", price: 5000, img: "material1.webp" },
-        ].map((item, index) => (
+        {materials.map((item, index) => (
           <div
             key={index}
             className="w-[90%] md:w-1/4 p-4 rounded-lg bg-white shadow-md hover:shadow-2xl hover:shadow-black/30 transition-all text-center"
           >
-            <h1 className="text-lg font-semibold my-2">{item.name}</h1>
-            <div className="max-w-[437px] max-h-[437px]">
+            <h1 className="text-lg font-bold">{item.name}</h1>
+            <div className="max-w-[437px] min-h-[200px]">
               <img
                 src={item.img}
                 alt="asoebi material"
-                className="w-full max-h-[420px] object-contain bg-[#e3e3e3] p-1 rounded-md"
+                className="w-full min-h-[320px] object-contain bg-[#e3e3e3] p-1 rounded-md"
               />
             </div>
             <div className="flex flex-col gap-y-2">
-              <span className="my-2 font-medium text-xl">
+              <span className="my-1 font-medium text-sm md:text-base">
                 &#8358;{item.price.toLocaleString()} Per Yard
               </span>
               <button
-                className="bg-amber-950/90 py-2 px-8 text-white rounded-md shadow-md"
+                className="bg-amber-950/90 py-2 text-white rounded-md shadow-md"
                 onClick={() => addToCheckout(item)}
               >
                 Order Now
@@ -157,9 +128,12 @@ export default function Asoebi() {
           </div>
         ))}
       </section>
+
       <section
         ref={checkoutRef}
-        className="bg-amber-950/50 w-0 overflow-hidden transition-all duration-500 z-40"
+        className={`fixed top-0 right-0 h-full bg-amber-950/50 backdrop-blur-md transform transition-transform duration-500 ${
+          checkoutOpen ? "translate-x-0 w-full lg:w-[50%]" : "translate-x-full w-0"
+        }`}
       >
         <div className="flex w-full justify-between px-2">
           <h1 className="p-4 text-white text-lg font-semibold">Checkout</h1>
@@ -235,10 +209,11 @@ export default function Asoebi() {
           )}
         </div>
       </section>
-      {animationDone && !checkoutOpen && (
+
+      {!checkoutOpen && (
         <button
           onClick={toggleCheckout}
-          className="absolute top-32 right-5 bg-amber-950/90 text-white p-4 rounded-full"
+          className="fixed top-24 right-10 bg-amber-950/90 text-white p-4 rounded-full"
           ref={cartIconRef}
         >
           <Cart />
