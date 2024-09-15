@@ -76,7 +76,7 @@ export default function Navbar() {
             {URLs.map((url, index) => (
               <Link href={url.path}>
                 <li
-                  key={url.path}
+                  key={index}
                   ref={(el) => (navItemsRef.current[index] = el)}
                   className="group text-white"
                 >

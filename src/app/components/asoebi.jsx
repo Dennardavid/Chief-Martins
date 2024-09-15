@@ -9,15 +9,25 @@ import Link from "next/link";
 
 export default function Asoebi() {
   const [checkoutOpen, setCheckoutOpen] = useState(false);
-  const [animationDone, setAnimationDone] = useState(true);
   const [checkoutItems, setCheckoutItems] = useState([]);
   const [showCartDot, setShowCartDot] = useState(false);
+  const [showCartButton, setShowCartButton] = useState(true);
   const checkoutRef = useRef(null);
   const cartIconRef = useRef(null);
 
   const toggleCheckout = () => {
     setCheckoutOpen(!checkoutOpen);
+    if (!checkoutOpen) {
+      setShowCartButton(false);
+    }
   };
+
+  const handleTransitionEnd = () => {
+    if (!checkoutOpen) {
+      setShowCartButton(true);
+    }
+  };
+
   const materials = [
     { name: "CIHIGAVY", price: 10000, img: "material2.webp" },
     { name: "UE WAX", price: 5000, img: "material1.webp" },
@@ -41,7 +51,6 @@ export default function Asoebi() {
       }
     });
 
-    // Show the cart dot and trigger the bounce animation
     setShowCartDot(true);
     triggerContinuousBounce();
   };
@@ -96,7 +105,7 @@ export default function Asoebi() {
   };
 
   return (
-    <section className="flex justify-between w-full mt-10">
+    <section className="flex justify-between w-full mt-10 pb-10">
       <section
         id="content-section"
         className="flex flex-col lg:flex-row gap-5 items-center justify-evenly w-full transition-all duration-500"
@@ -131,13 +140,16 @@ export default function Asoebi() {
 
       <section
         ref={checkoutRef}
-        className={`fixed top-0 right-0 h-full bg-amber-950/50 backdrop-blur-md transform transition-transform duration-500 ${
-          checkoutOpen ? "translate-x-0 w-full lg:w-[50%]" : "translate-x-full w-0"
+        className={`fixed top-0 right-0 h-full bg-amber-950/60 backdrop-blur-md transform transition-all duration-500 ease-in-out  ${
+          checkoutOpen
+            ? "translate-x-0 w-full lg:w-[50%]"
+            : "translate-x-full w-0"
         }`}
+        onTransitionEnd={handleTransitionEnd}
       >
-        <div className="flex w-full justify-between px-2">
+        <div className="flex w-full justify-between mt-20">
           <h1 className="p-4 text-white text-lg font-semibold">Checkout</h1>
-          <button onClick={toggleCheckout} className="text-white">
+          <button onClick={toggleCheckout} className="text-white mr-[14px]">
             <Close />
           </button>
         </div>
@@ -147,7 +159,7 @@ export default function Asoebi() {
               <ul>
                 {checkoutItems.map((item, index) => (
                   <li
-                    key={index}
+                    key={item.name}
                     className="flex justify-between items-center my-4 bg-white p-2 rounded-md shadow-md"
                   >
                     <img
@@ -210,10 +222,10 @@ export default function Asoebi() {
         </div>
       </section>
 
-      {!checkoutOpen && (
+      {showCartButton && !checkoutOpen && (
         <button
           onClick={toggleCheckout}
-          className="fixed top-24 right-10 bg-amber-950/90 text-white p-4 rounded-full"
+          className="fixed top-24 right-10 bg-amber-950/90 text-white p-4 rounded-full transition-opacity duration-300 ease-in-out"
           ref={cartIconRef}
         >
           <Cart />
