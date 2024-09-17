@@ -58,11 +58,12 @@ export default function Navbar() {
 
   const isHomePage = pathname === "/";
   const isOrderOfEventsPage = pathname === "/order-of-events";
+  const isGiftsPage = pathname === "/gifts";
 
   return (
     <header
       className={`sticky top-0 z-30 ${
-        isHomePage || isOrderOfEventsPage
+        isHomePage || isOrderOfEventsPage || isGiftsPage
           ? "bg-amber-950/0 backdrop-blur-none lg:hover:bg-white/20 lg:hover:backdrop-filter lg:hover:bg-opacity-15 lg:hover:backdrop-blur-md ease-in-out duration-500"
           : "bg-amber-950/50"
       } ${menuOpen ? "backdrop-blur-none" : "backdrop-blur-md"}`}
@@ -74,9 +75,8 @@ export default function Navbar() {
         <div className="hidden items-center lg:flex">
           <ul className="flex flex-col lg:flex-row items-center lg:gap-8 xl:gap-10 md:text-base lg:text-xl">
             {URLs.map((url, index) => (
-              <Link href={url.path}>
+              <Link href={url.path} key={index}>
                 <li
-                  key={index}
                   ref={(el) => (navItemsRef.current[index] = el)}
                   className="group text-white"
                 >
@@ -110,9 +110,9 @@ export default function Navbar() {
               <Link
                 href={url.path}
                 ref={(el) => (navItemsRef.current[index] = el)}
+                key={index}
               >
                 <li
-                  key={url.path}
                   ref={(el) => (navItemsRef.current[index] = el)}
                   className="group text-white"
                 >
