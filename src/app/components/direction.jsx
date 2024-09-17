@@ -29,7 +29,7 @@ export default function Direction() {
         <iframe
           src="https://www.google.com/maps/d/embed?mid=1wAgqkNFAFKe4JEJPG4z0LqNzaL4VS0Y&ehbc=2E312F&noprof=1"
           width="100%"
-          height="600"
+          height="630"
           allowFullScreen=""
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"

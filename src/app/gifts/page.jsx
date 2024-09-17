@@ -1,11 +1,26 @@
+"use client"
+
 import Navbar from "../components/navbar";
+import { useState } from "react";
 
 export default function DonationPage() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleOverlayClick = () => {
+    console.log("Overlay clicked, menuOpen:", menuOpen);
+    setMenuOpen(false);
+  };
   return (
     <main>
       <div className="w-dvw bg-[url('/gifts-mobile-bg.jpeg')] md:bg-[url('/gifts-tablet-bg.jpeg')] lg:bg-[url('/gifts-bg.jpeg')] h-screen full bg-cover bg-no-repeat">
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-40" id="wrapper">
-          <Navbar />
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-10" id="wrapper">
+          <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+          {menuOpen && (
+            <div
+              className="fixed inset-0 z-40 lg:hidden"
+              onClick={handleOverlayClick}
+            ></div>
+          )}
           <section className="relative top-[30%] lg:top-[29%] lg:left-[2.5%] flex flex-col mx-auto lg:mx-0 gap-3 px-2 md:px-8 lg:px-10 justify-center items-center mt-7 text-white backdrop-blur-md backdrop-filter bg-amber-950/20 w-[96%] md:w-[650px] p-4 rounded-md shadow-md shadow-white/20">
             <p className="text-sm md:text-base 2xl:text-xl w-[96%] md:w-[600px]">
               We sincerely appreciate your thoughts, prayers, and support during
