@@ -3,10 +3,10 @@ import Navbar from "../components/navbar";
 export default function DonationPage() {
   return (
     <main>
-      <div className="w-dvw bg-[url('/gifts-mobile-bg.jpeg')] md:bg-[url('/gifts-tablet-bg.jpeg')] lg:bg-[url('/gifts-bg.jpeg')] h-screen full bg-cover bg-no-repeat pb-1">
+      <div className="w-dvw bg-[url('/gifts-mobile-bg.jpeg')] md:bg-[url('/gifts-tablet-bg.jpeg')] lg:bg-[url('/gifts-bg.jpeg')] h-screen full bg-cover bg-no-repeat">
         <div className="fixed inset-0 bg-black bg-opacity-50 z-40" id="wrapper">
           <Navbar />
-          <section className="relative top-[30%] lg:top-[30%] lg:left-[2.5%] flex flex-col mx-auto lg:mx-0 gap-3 px-2 md:px-8 lg:px-10 justify-center items-center mt-7 text-white backdrop-blur-md backdrop-filter bg-white/10 w-[400px] md:w-[650px] p-4 md:p-7 rounded-md shadow-md shadow-white/20">
+          <section className="relative top-[30%] lg:top-[29%] lg:left-[2.5%] flex flex-col mx-auto lg:mx-0 gap-3 px-2 md:px-8 lg:px-10 justify-center items-center mt-7 text-white backdrop-blur-md backdrop-filter bg-white/10 w-[400px] md:w-[650px] p-4 rounded-md shadow-md shadow-white/20">
             <p className="text-sm md:text-base 2xl:text-xl w-[370px] md:w-[600px]">
               We sincerely appreciate your thoughts, prayers, and support during
               this difficult time. Your kind words and prayers have brought us

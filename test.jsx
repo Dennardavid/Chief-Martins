@@ -75,10 +75,10 @@ export default function Asoebi() {
   const triggerContinuousBounce = () => {
     gsap.to(cartIconRef.current, {
       y: -10,
-      duration: 1, 
+      duration: 1,
       ease: "power1.inOut",
       yoyo: true,
-      repeat: -1, 
+      repeat: -1,
     });
   };
 
@@ -245,8 +245,20 @@ export default function Asoebi() {
           {showCartDot && (
             <span className="absolute top-0 right-0 w-3 h-3 bg-red-500 rounded-full"></span>
           )}
+
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15903.605942834945!2d6.994957029819488!3d4.786936014562975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1069cea7bcf3afd1%3A0xe3dd8017b4fc7853!2sIsaac%20Boro%20Park!5e0!3m2!1sen!2sng!4v1726584723137!5m2!1sen!2sng"
+            width="800"
+            height="600"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
         </button>
       )}
+      bg-[url('/Chief-martins-small.webp')]
+      md:bg-[url('/Chief-martins-tab.webp')] lg:bg-[url('/Chief-martins.webp')]
     </section>
   );
 }

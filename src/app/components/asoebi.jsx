@@ -105,7 +105,7 @@ export default function Asoebi() {
   };
 
   return (
-    <section className="flex justify-between w-full mt-10 pb-10">
+    <section className="mt-[5%] lg:mt-[6%] pb-10">
       <section
         id="content-section"
         className="flex flex-col lg:flex-row gap-5 items-center justify-evenly w-full transition-all duration-500"
@@ -113,14 +113,14 @@ export default function Asoebi() {
         {materials.map((item, index) => (
           <div
             key={index}
-            className="w-[90%] md:w-1/4 p-4 rounded-lg bg-white shadow-md hover:shadow-2xl hover:shadow-black/30 transition-all text-center"
+            className="w-[90%] md:w-[60%] lg:w-[23%] p-4 rounded-lg bg-white shadow-md hover:shadow-2xl hover:shadow-black/30 transition-all text-center"
           >
             <h1 className="text-lg font-bold">{item.name}</h1>
             <div className="max-w-[437px] min-h-[200px]">
               <img
                 src={item.img}
                 alt="asoebi material"
-                className="w-full min-h-[320px] object-contain bg-[#e3e3e3] p-1 rounded-md"
+                className="w-full h-[350px] object-contain bg-[#e3e3e3] p-1 rounded-md"
               />
             </div>
             <div className="flex flex-col gap-y-2">
@@ -225,7 +225,7 @@ export default function Asoebi() {
       {showCartButton && !checkoutOpen && (
         <button
           onClick={toggleCheckout}
-          className="fixed top-24 right-10 bg-amber-950/90 text-white p-4 rounded-full transition-opacity duration-300 ease-in-out"
+          className="fixed top-16 md:top-20 right-2 md:right-6 lg:top-24 lg:right-10 bg-amber-950/90 text-white p-3 lg:p-4 rounded-full transition-opacity duration-300 ease-in-out"
           ref={cartIconRef}
         >
           <Cart />
