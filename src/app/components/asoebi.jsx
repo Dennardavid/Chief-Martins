@@ -98,7 +98,6 @@ export default function Asoebi() {
       prevItems.filter((item) => item.name !== itemName)
     );
 
-    // Optionally, hide the cart dot if no items are left
     if (checkoutItems.length === 1) {
       setShowCartDot(false);
     }
@@ -140,7 +139,7 @@ export default function Asoebi() {
 
       <section
         ref={checkoutRef}
-        className={`fixed top-0 right-0 h-full bg-amber-950/60 backdrop-blur-md transform transition-all duration-500 ease-in-out  ${
+        className={`fixed top-0 right-0 h-full bg-amber-950/60 backdrop-blur-md transform transition-all duration-500 ease-in-out z-40 ${
           checkoutOpen
             ? "translate-x-0 w-full lg:w-[50%]"
             : "translate-x-full w-0"
@@ -204,12 +203,12 @@ export default function Asoebi() {
                     .toLocaleString()}
                   ;
                 </p>
-                <p>Bank Name: Opay</p>
-                <p>Account Number: 9012144154</p>
-                <p>Account Name: Dennar David Ifeanyichukwu</p>
+                <p>Bank Name: First Bank Nigeria</p>
+                <p>Account Number: 3049431875</p>
+                <p>Account Name: Abu Oghenetega Deborah</p>
                 <Link
                   target="_blank"
-                  href="https://wa.link/xikkz2"
+                  href="https://wa.link/h7i6ri"
                   className="bg-amber-950/90 py-2 px-8 text-white rounded-md shadow-md text-center"
                 >
                   <button>Show Proof of Payment</button>
@@ -225,7 +224,7 @@ export default function Asoebi() {
       {showCartButton && !checkoutOpen && (
         <button
           onClick={toggleCheckout}
-          className="fixed top-16 md:top-20 right-2 md:right-6 lg:top-24 lg:right-10 bg-amber-950/90 text-white p-3 lg:p-4 rounded-full transition-opacity duration-300 ease-in-out"
+          className="fixed top-16 md:top-20 right-2 md:right-6 lg:top-24 lg:right-10 bg-amber-950/90 text-white p-3 lg:p-4 rounded-full transition-opacity duration-300 ease-in-out z-40"
           ref={cartIconRef}
         >
           <Cart />

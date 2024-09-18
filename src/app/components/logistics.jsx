@@ -1,6 +1,18 @@
 import Link from "next/link";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 export default function Logistics() {
+  useGSAP(() => {
+    gsap.from(".Intro", {
+      duration: 0.5,
+      x: -10,
+      opacity: 0,
+      stagger: 0.2,
+      delay: 0.2,
+    });
+  });
+
   const transportationOut = [
     {
       name: "Air Peace",
@@ -36,7 +48,7 @@ export default function Logistics() {
     },
     {
       name: "Newton logistics service",
-      image: "/joe.png",
+      image: "/newton.webp",
       contact: "0802 834 4637",
     },
     { name: "Bolt App", image: "/bolt.png", contact: "" },
@@ -49,7 +61,7 @@ export default function Logistics() {
         </h1>
         {transportationOut.map((means) => (
           <div
-            className="bg-white flex p-2 rounded-md shadow-md gap-5"
+            className="Intro bg-white flex p-2 rounded-md shadow-md gap-5"
             key={means.name}
           >
             <div className="bg-[#e3e3e3] p-1 rounded-md w-24 h-24 flex justify-center items-center">
@@ -75,7 +87,7 @@ export default function Logistics() {
         </h1>
         {transportationIn.map((means) => (
           <div
-            className="bg-white flex p-2 rounded-md shadow-md gap-5"
+            className="Intro bg-white flex p-2 rounded-md shadow-md gap-5"
             key={means.name}
           >
             <div className="bg-[#e3e3e3] p-1 rounded-md w-24 h-24 flex justify-center items-center">
