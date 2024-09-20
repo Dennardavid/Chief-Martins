@@ -5,8 +5,8 @@ import { useGSAP } from "@gsap/react";
 export default function Logistics() {
   useGSAP(() => {
     gsap.from(".Intro", {
-      duration: 0.5,
-      x: -10,
+      duration: 0.2,
+      y: -10,
       opacity: 0,
       stagger: 0.2,
       delay: 0.2,
@@ -51,7 +51,7 @@ export default function Logistics() {
       image: "/newton.webp",
       contact: "0802 834 4637",
     },
-    { name: "Bolt App", image: "/bolt.png", contact: "" },
+    { name: "Bolt App", image: "/bolt.png", website: "https://bolt.onelink.me" },
   ];
   return (
     <section className="flex flex-col lg:flex-row lg:justify-between py-2 pb-5">
@@ -95,7 +95,17 @@ export default function Logistics() {
             </div>
             <div className="flex flex-col justify-evenly">
               <p className="font-medium">{means.name}</p>
-              <p>Contact: {means.contact}</p>
+              {means.name === "Bolt App" ? (
+                <Link
+                  href={means.website}
+                  target="_blank"
+                  className="bg-amber-950/90 text-center text-white w-28 p-1 rounded-md"
+                >
+                  Book Now
+                </Link>
+              ) : (
+                <p>Contact: {means.contact}</p>
+              )}
             </div>
           </div>
         ))}

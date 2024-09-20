@@ -33,7 +33,7 @@ export default function OrderOfEvents() {
 
   return (
     <>
-      <main className="w-dvw bg-[url('/gifts-mobile.webp')] md:bg-[url('/gifts-tablet.webp')] lg:bg-[url('/gifts-bg.webp')] h-screen bg-cover bg-no-repeat pb-1">
+      <main className="w-dvw bg-[url('/big-chief_enhanced_resized.jpg')] md:bg-[url('/big-chief_enhanced_resized.jpg')] lg:bg-[url('/big-chief_enhanced_resized.jpg')] h-screen bg-cover bg-no-repeat pb-1">
         <div className="fixed inset-0 bg-black bg-opacity-10 z-0">
           <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
 
