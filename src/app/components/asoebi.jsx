@@ -31,6 +31,7 @@ export default function Asoebi() {
   const materials = [
     { name: "CIHIGAVY", price: 10000, img: "material2.webp" },
     { name: "UE WAX", price: 5000, img: "material1.webp" },
+    { name: "DONNA WAX", price: 5000, img: "service-of-song.png" },
   ];
 
   const addToCheckout = (item) => {
