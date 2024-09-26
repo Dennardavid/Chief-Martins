@@ -8,13 +8,11 @@ export default function DirectionPage() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="relative min-h-screen">
-      <Direction />
-      <div className="relative z-10">
-        <div className="sticky top-0 left-0 w-full">
-          <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-        </div>
+    <div className="bg-[#e3e3e3] min-h-screen">
+      <div className="sticky top-0 z-50 left-0 w-full">
+        <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       </div>
+      <Direction />
     </div>
   );
 }
