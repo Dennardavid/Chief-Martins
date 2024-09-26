@@ -9,7 +9,7 @@ export default function DirectionPage() {
 
   return (
     <div className="bg-[#e3e3e3] min-h-screen">
-      <div className="absolute top-0 left-0 w-full">
+      <div className="sticky top-0 z-50 left-0 w-full">
         <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       </div>
       <Direction />
