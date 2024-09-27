@@ -42,7 +42,7 @@ export default function Logistics() {
     {
       name: "Bolt App",
       image: "/bolt.png",
-      website: "https://bolt.onelink.me",
+      website: "https://play.google.com/store/apps/details?id=ee.mtakso.client",
     },
   ];
   return (
