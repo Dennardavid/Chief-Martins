@@ -12,11 +12,9 @@ export const metadata = {
     description: "Join us to Celebrate the Life of Chief Martins Dafe Abu",
     url: "https://chief-martins-dafe.netlify.app/",
     siteName: "Chief Martins Abu",
-    image: [
+    images: [
       {
-        url: "https://asset.cloudinary.com/dsngkhlct/bd08623839163f963adc1322bc5a69dc",
-        secureUrl:
-          "https://asset.cloudinary.com/dsngkhlct/bd08623839163f963adc1322bc5a69dc",
+        url: "https://res.cloudinary.com/dsngkhlct/image/upload/v1727464280/tablet_cchafd.png",
         width: 1200,
         height: 630,
         alt: "Chief Martins Abu",
