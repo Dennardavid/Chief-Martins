@@ -15,8 +15,10 @@ export const metadata = {
     image: [
       {
         url: "https://asset.cloudinary.com/dsngkhlct/bd08623839163f963adc1322bc5a69dc",
+        secureUrl:
+          "https://asset.cloudinary.com/dsngkhlct/bd08623839163f963adc1322bc5a69dc",
         width: 1200,
-        height: 860,
+        height: 630,
         alt: "Chief Martins Abu",
       },
     ],
