@@ -19,17 +19,10 @@ export default function Accomodation() {
     {
       name: "Wetland Hotel",
       location: "Mofor junction, Ekete, Warri, Delta",
-      contact: "+2348170574979",
+      contact: "+2349023332933",
       email: "warriwetlandhotel@gmail.com",
       website: "https://wetlandhotelnigeria.com/",
       image: "/wetland.webp",
-    },
-    {
-      name: "D'keys Lodge Spot",
-      location: "DSC Express-Way by Oku-Atata, Ugbomro Junction, Effurun",
-      contact: "0703 336 5998",
-      website: "https://hotels.ng/hotel/1012268-dkeys-hotel-delta",
-      image: "/dkeys.jpg",
     },
     {
       name: "Clique Court Hotel & Suite",
@@ -39,12 +32,33 @@ export default function Accomodation() {
       image: "/Clique.jpg",
     },
     {
+      name: "Miveth Hotel",
+      location: "3 Gario Street, Off Orhuwhorun Road, Ovwian, Warri, Delta",
+      contact: "+2348066110343",
+      website: "https://www.facebook.com/mivethhsltd/",
+      image: "/miveth.jpg",
+    },
+    {
+      name: "Slyva Link Hotel",
+      location: "61,Orhuwhowun Road Ovwian, Warri, Delta",
+      contact: "+2348028498701",
+      website: "https://hotels.ng/hotel/59664-sylvia-link-warri-delta",
+      image: "/slyva-link.jpg",
+    },
+    /* {
+      name: "D'keys Lodge Spot",
+      location: "DSC Express-Way by Oku-Atata, Ugbomro Junction, Effurun",
+      contact: "0703 336 5998",
+      website: "https://hotels.ng/hotel/1012268-dkeys-hotel-delta",
+      image: "/dkeys.jpg",
+    },
+    {
       name: "The Arians Hotel and Suites",
       location: "Arians crescent off emuobó Ono sorhue Road, Udu, Egini",
       contact: "",
       website: "https://hotels.ng/hotel/1470606-the-arians-hotel-and-suites",
       image: "/arians.jpg",
-    },
+    }, */
   ];
 
   return (

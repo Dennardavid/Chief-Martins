@@ -209,7 +209,7 @@ export default function Asoebi() {
                 <p>Account Name: Abu Oghenetega Deborah</p>
                 <Link
                   target="_blank"
-                  href="https://wa.link/si289y"
+                  href="https://wa.link/09musa"
                   className="bg-amber-950/90 py-2 px-8 text-white rounded-md shadow-md text-center"
                 >
                   <button>Show Proof of Payment</button>
