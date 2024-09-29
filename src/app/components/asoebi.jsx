@@ -105,7 +105,7 @@ export default function Asoebi() {
   };
 
   return (
-    <section className="mt-[5%] lg:mt-[6%] pb-10">
+    <section className="mt-[5%] lg:mt-[6%] pb-10 max-w-[1600px] mx-auto">
       <section
         id="content-section"
         className="flex flex-col lg:flex-row gap-5 items-center justify-evenly w-full transition-all duration-500"
@@ -225,7 +225,7 @@ export default function Asoebi() {
       {showCartButton && !checkoutOpen && (
         <button
           onClick={toggleCheckout}
-          className="fixed top-16 md:top-20 right-2 md:right-6 lg:top-24 lg:right-10 bg-amber-950/90 text-white p-3 lg:p-4 rounded-full transition-opacity duration-300 ease-in-out z-40"
+          className="fixed top-16 md:top-24 right-2 md:right-6 lg:top-28 lg:right-10 bg-amber-950/90 text-white p-3 lg:p-4 rounded-full transition-opacity duration-300 ease-in-out z-40"
           ref={cartIconRef}
         >
           <Cart />

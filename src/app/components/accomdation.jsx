@@ -62,7 +62,7 @@ export default function Accomodation() {
   ];
 
   return (
-    <section className="px-2 md:px-8 lg:px-10 ">
+    <section className="px-2 md:px-8 lg:px-10 max-w-[1600px] mx-auto">
       <p className="text-center mt-5 lg:mt-8 font-semibold text-sm md:text-base lg:text-xl uppercase">
         All bookings Should be made at least a week before the event to ensure
         smooth process.

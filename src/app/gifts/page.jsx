@@ -22,10 +22,11 @@ export default function DonationPage() {
   return (
     <main>
       <div className="w-dvw bg-[url('/gifts-mobile.webp')] md:bg-[url('/gifts-tablet.webp')] lg:bg-[url('/gifts-bg.webp')] h-screen full bg-cover bg-no-repeat">
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-10" id="wrapper">
-          <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+        <div className="fixed inset-0 bg-black bg-opacity-50"></div>
+        <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
 
-          <section className="relative top-[30%] lg:top-[29%] lg:left-[2.5%] flex flex-col mx-auto lg:mx-0 gap-3 px-2 md:px-8 lg:px-10 justify-center items-center mt-7 text-white backdrop-blur-md backdrop-filter bg-amber-950/20 w-[96%] md:w-[650px] p-4 rounded-md shadow-md shadow-white/20">
+        <div className="relative top-[30%] lg:top-[29%] max-w-[1600px] mx-auto px-2 md:px-8 lg:px-10">
+          <section className=" flex flex-col mx-auto lg:mx-0 gap-3  justify-center items-center mt-7 text-white backdrop-blur-md backdrop-filter bg-amber-950/20 w-[96%] md:w-[650px] p-4 rounded-md shadow-md shadow-white/20">
             <p className="title text-sm md:text-base 2xl:text-xl w-[96%] md:w-[600px]">
               We sincerely appreciate your thoughts, prayers, and support during
               this difficult time. Your kind words and prayers have brought us

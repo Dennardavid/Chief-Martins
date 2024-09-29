@@ -46,7 +46,7 @@ export default function Logistics() {
     },
   ];
   return (
-    <section className="flex flex-col lg:flex-row lg:justify-between py-2 pb-5">
+    <section className="flex flex-col lg:flex-row lg:justify-between py-2 pb-5 max-w-[1600px] mx-auto">
       <div className="flex flex-col gap-3 mx-2 lg:mx-10 lg:w-2/4">
         <h1 className="text-center mt-5 lg:my-4 font-semibold text-xl">
           Out of state Logistics Services

@@ -82,7 +82,7 @@ export default function Navbar({ menuOpen, setMenuOpen }) {
             : "bg-amber-950/50"
         } ${menuOpen ? "backdrop-blur-none" : "backdrop-blur-md"}`}
       >
-        <nav className="flex justify-between items-center lg:items-center relative px-2 md:px-8 lg:px-10">
+        <nav className="flex justify-between items-center lg:items-center relative px-2 md:px-8 lg:px-10 max-w-[1600px] mx-auto">
           <Link href="/" className="">
             <img src="/logo.webp" alt="logo" className="w-14 md:w-16 lg:w-20" />
           </Link>
