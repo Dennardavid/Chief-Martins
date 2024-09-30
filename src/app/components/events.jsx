@@ -23,7 +23,7 @@ export default function Events() {
         <p className="Intro text-base md:text-base 2xl:text-xl">
           Interment: 12:00pm <br />
           Venue: No 1 Chief Martins Abu Avenue off Umolo- Olomu
-          Road, Okpare Olomu.
+          Road, Okpare Olomu. (Private)
         </p>
         <h2 className="header2 font-extrabold text-base md:text-lg lg:text-xl 2xl:text-2xl mt-[6px] lg:mt-3">
           Burial Reception- Friday 22nd November 2024
@@ -31,7 +31,7 @@ export default function Events() {
         <p className="Intro text-base md:text-base 2xl:text-xl">
           Time: 12:30pm
           <br />
-          Venue: Okpare Grammar School, Okpare Olomu, Ughelli, Delta State
+          Venue: Ekako Primary School Field, Okpare, Delta State
         </p>
       </div>
     </div>
