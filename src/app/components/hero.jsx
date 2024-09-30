@@ -45,7 +45,7 @@ export default function Hero() {
         <p className="Intro text-sm md:text-base 2xl:text-xl">
           Celebrating the life and legacy of Chief Martins Dafe Abu, a beloved
           leader and cherished soul, through this memorial site, you can find
-          burial details, offer support, and share messages of remembrance.
+          burial details, directions, and offer support.
         </p>
         <p className="Intro text-sm md:text-xl base:text-xl font-bold">
           November 21st and 22nd, 2024

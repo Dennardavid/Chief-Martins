@@ -25,7 +25,7 @@ export default function DonationPage() {
         <div className="fixed inset-0 bg-black bg-opacity-50"></div>
         <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
 
-        <div className="relative top-[30%] lg:top-[29%] max-w-[1600px] mx-auto px-2 md:px-8 lg:px-10">
+        <div className="relative top-[30%] lg:top-[29%] max-w-[1900px] mx-auto px-2 md:px-8 lg:px-10">
           <section className=" flex flex-col mx-auto lg:mx-0 gap-3  justify-center items-center mt-7 text-white backdrop-blur-md backdrop-filter bg-amber-950/20 w-[96%] md:w-[650px] p-4 rounded-md shadow-md shadow-white/20">
             <p className="title text-sm md:text-base 2xl:text-xl w-[96%] md:w-[600px]">
               We sincerely appreciate your thoughts, prayers, and support during

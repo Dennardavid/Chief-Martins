@@ -38,7 +38,7 @@ export default function OrderOfEvents() {
         <div className="fixed inset-0 bg-black bg-opacity-10 z-0">
           <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
           <div className="fixed inset-0 -z-50 w-[100%] min-h-screen lg:bg-gradient-to-r lg:from-black xl:from-5%">
-            <div className="max-w-[1600px] mx-auto relative lg:top-[45%] xl:top-[35%]">
+            <div className="max-w-[1900px] mx-auto relative lg:top-[45%] xl:top-[35%]">
               <Events />
             </div>
           </div>

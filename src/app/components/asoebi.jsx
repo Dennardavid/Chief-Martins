@@ -105,7 +105,7 @@ export default function Asoebi() {
   };
 
   return (
-    <section className="mt-[5%] lg:mt-[6%] pb-10 max-w-[1600px] mx-auto">
+    <section className="mt-[5%] lg:mt-[6%] pb-10 max-w-[1900px] mx-auto">
       <section
         id="content-section"
         className="flex flex-col lg:flex-row gap-5 items-center justify-evenly w-full transition-all duration-500"
