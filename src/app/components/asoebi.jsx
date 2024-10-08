@@ -125,7 +125,7 @@ export default function Asoebi() {
             </div>
             <div className="flex flex-col gap-y-2">
               <span className="my-1 font-medium text-sm md:text-base">
-                &#8358;{item.price.toLocaleString()} Per Yard
+                &#8358;{item.price.toLocaleString()} Per 6 Yards
               </span>
               <button
                 className="bg-amber-950/90 py-2 text-white rounded-md shadow-md"
