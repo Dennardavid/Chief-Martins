@@ -13,9 +13,9 @@ export default function Logistics() {
       website: "https://www.arikair.com/",
     },
     {
-      name: "United Airlines",
-      image: "/united-air.png",
-      website: "https://www.united.com/en/us",
+      name: "United Nigeria Airlines",
+      image: "/UNITED-LOGO.webp",
+      website: "https://flyunitednigeria.com/",
     },
     {
       name: "Green Africa",
