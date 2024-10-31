@@ -29,15 +29,11 @@ export default function Logistics() {
     },
   ];
   const transportationIn = [
+    
     {
-      name: "Joe Logistics Services",
-      image: "/joe.png",
-      contact: "0810 665 9381",
-    },
-    {
-      name: "Newton logistics service",
-      image: "/newton.webp",
-      contact: "0802 834 4637",
+      name: "Ayo Logistics",
+      image: "/ayo-logistics.webp",
+      contact: "0703 914 3774",
     },
     {
       name: "Bolt App",
