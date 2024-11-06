@@ -17,7 +17,7 @@ export default function Events() {
           Funeral Mass- Friday 22nd November 2024
         </h2>
         <p className="Intro text-base md:text-base 2xl:text-xl">
-          Time: 10:00am <br />
+          Time: 9:00am <br />
           Venue: St. Peter Catholic Church Ekete lnland, Delta State.
         </p>
         <p className="Intro text-base md:text-base 2xl:text-xl">
