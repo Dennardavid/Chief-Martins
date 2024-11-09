@@ -29,8 +29,8 @@ export default function Asoebi() {
   };
 
   const materials = [
-    { name: "GENERAL MATERIAL", price: 10000, img: "material2.webp" },
-    { name: "GENERAL MATERIAL", price: 5000, img: "material1.webp" },
+    { name: "GENERAL MATERIAL 1", price: 10000, img: "material2.webp" },
+    { name: "GENERAL MATERIAL 2", price: 5000, img: "material1.webp" },
     { name: "SERVICE OF SONGS", price: 5000, img: "service-of-song.png" },
   ];
 
